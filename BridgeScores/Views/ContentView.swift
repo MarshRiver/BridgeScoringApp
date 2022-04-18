@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CaptionRowView:View{
+struct LegendRowView:View{
     var body: some View {
         
         HStack{
@@ -32,22 +32,10 @@ struct ContentView: View {
     @State var resultString = ""
     var body: some View {
         VStack{
-            CaptionRowView()
+            LegendRowView()
             ScrollView {
-                BoardView()
-                HStack {
-                    Text("Table 1").font(.title)
-                    Button("NS Rank: ",action: {
-                        resultString = match.Boards[0].sortBoard()
-                    })
-                    .foregroundColor(.black)
-
-                    Text(resultString)
-                        .foregroundColor(.black)
-                        .padding()
-//                        .frame(width:80)
-//                        .border(.black, width: 2)
-                }
+                BoardView(boardNo: 0)
+                BoardView(boardNo: 1)
            }
         }
         .environmentObject(match)

@@ -7,30 +7,48 @@
 
 import SwiftUI
 
+struct CaptionView: View{
+    var boardNo:Int
+    @EnvironmentObject var match: Match
+    @State var resultString = ""
+    var body: some View{
+        HStack {
+            Text("Table " + String(match.Boards[boardNo].id + 1)).font(.title)
+            Button("NS Rank: ",action: {
+                resultString = match.Boards[boardNo].sortBoard()
+            })
+            .foregroundColor(.black)
+
+            Text(resultString)
+//                .foregroundColor(.black)
+                .padding()
+//                .frame(width:80)
+//                .border(.black, width: 2)
+        }
+
+    }
+}
 struct BoardView: View {
+    var boardNo:Int
     @EnvironmentObject var match: Match
     var body: some View {
         VStack{
-            ContractRow(rowNo: 0)
-            ContractRow(rowNo: 1)
-            ContractRow(rowNo: 2)
-            ContractRow(rowNo: 3)
-            ContractRow(rowNo: 4)
-            ContractRow(rowNo: 5)
-//            ContractRow(contract: match.Boards[0].contracts[0])
-//            ContractRow(contract: match.Boards[0].contracts[1])
-//            ContractRow(contract: match.Boards[0].contracts[2])
-//            ContractRow(contract: match.Boards[0].contracts[3])
-//            ContractRow(contract: match.Boards[0].contracts[4])
-//            ContractRow(contract: match.Boards[0].contracts[5])
+            ContractRow(rowNo: 0,boardNo: boardNo)
+            ContractRow(rowNo: 1,boardNo: boardNo)
+            ContractRow(rowNo: 2,boardNo: boardNo)
+            ContractRow(rowNo: 3,boardNo: boardNo)
+            ContractRow(rowNo: 4,boardNo: boardNo)
+            ContractRow(rowNo: 5,boardNo: boardNo)
+            CaptionView(boardNo: boardNo)
         }
+        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
     }
 
 }
 
 struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardView().environmentObject(Match())
+        BoardView(boardNo: 0).environmentObject(Match())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
