@@ -42,31 +42,42 @@ struct ContractRow: View {
     var body: some View {
         VStack {
             HStack{
+                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].nsMP))
+                    .font(.title2)
                 TextField("NSPair",text: $match.Boards[boardNo].contracts[rowNo].nsPair)
-                    .frame(width:80)
+                    .font(.title2)
+                    .frame(width:100)
                 TextField("Bid",text: $match.Boards[boardNo].contracts[rowNo].bid)
-                    .frame(width:80)
+                    .font(.title2)
+                    .frame(width:100)
                 TextField("Made",text: $match.Boards[boardNo].contracts[rowNo].made)
-                    .frame(width:80)
+                    .font(.title2)
+                    .frame(width:100)
                 TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
-                    .frame(width:80)
+                    .font(.title2)
+                    .frame(width:100)
                 TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
-                    .frame(width:80)
+                    .font(.title2)
+                    .keyboardType(.numberPad)
+                    .frame(width:100)
                     .onSubmit{
                         match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
                     }
                 TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
-                    .frame(width:80)
+                    .font(.title2)
+                    .keyboardType(.numberPad)
+                    .frame(width:100)
                     .onSubmit{
                         match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
                     }
-                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].nsMP))
-                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].ewMP))
                 TextField("EWPair",text: $match.Boards[boardNo].contracts[rowNo].ewPair)
-                    .frame(width:80)
-                
-            }.padding()
+                    .frame(width:100)
+                    .font(.title2)
+                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].ewMP))
+                    .font(.title2)
+            }
         }
+        .padding(.bottom, 2.0)
     }
         
 

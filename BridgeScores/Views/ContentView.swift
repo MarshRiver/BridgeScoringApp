@@ -11,15 +11,23 @@ struct LegendRowView:View{
     var body: some View {
         
         HStack{
-            TextBox(s: "NSPair")
-            TextBox(s: "Bid")
-            TextBox(s: "Made")
-            TextBox(s: "Down")
-            TextBox(s: "NSScore")
-            TextBox(s: "EWScore")
             TextBox(s: "NSMP")
-            TextBox(s: "EWMP")
+                .frame(width:100)
+            TextBox(s: "NSPair")
+                .frame(width:100)
+            TextBox(s: "Bid")
+                .frame(width:100)
+            TextBox(s: "Made")
+                .frame(width:100)
+            TextBox(s: "Down")
+                .frame(width:100)
+            TextBox(s: "NSScore")
+                .frame(width:100)
+            TextBox(s: "EWScore")
+                .frame(width:100)
             TextBox(s: "EWPair")
+                .frame(width:100)
+            TextBox(s: "EWMP")
         }
         .background(.cyan)
         .padding()
@@ -34,9 +42,11 @@ struct ContentView: View {
         VStack{
             LegendRowView()
             ScrollView {
-                BoardView(boardNo: 0)
-                BoardView(boardNo: 1)
-           }
+                BoardView(boardNo: 0).padding()
+                BoardView(boardNo: 1).padding()
+                BoardView(boardNo: 2).padding()
+                BoardView(boardNo: 3).padding()
+            }
         }
         .environmentObject(match)
     }

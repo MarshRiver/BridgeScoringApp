@@ -13,7 +13,7 @@ struct CaptionView: View{
     @State var resultString = ""
     var body: some View{
         HStack {
-            Text("Table " + String(match.Boards[boardNo].id + 1)).font(.title)
+            Text("Board " + String(match.Boards[boardNo].id + 1)).font(.title)
             Button("NS Rank: ",action: {
                 resultString = match.Boards[boardNo].sortBoard()
             })
@@ -33,14 +33,15 @@ struct BoardView: View {
     @EnvironmentObject var match: Match
     var body: some View {
         VStack{
+            CaptionView(boardNo: boardNo)
             ContractRow(rowNo: 0,boardNo: boardNo)
             ContractRow(rowNo: 1,boardNo: boardNo)
             ContractRow(rowNo: 2,boardNo: boardNo)
             ContractRow(rowNo: 3,boardNo: boardNo)
             ContractRow(rowNo: 4,boardNo: boardNo)
             ContractRow(rowNo: 5,boardNo: boardNo)
-            CaptionView(boardNo: boardNo)
         }
+        .padding(.bottom)
         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
     }
 
