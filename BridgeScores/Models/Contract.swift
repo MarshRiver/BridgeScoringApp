@@ -52,6 +52,37 @@ struct Board{
         print(sortedContracts)
         return(sortedContracts[0].nsPair + " , " + sortedContracts[1].nsPair + " , " + sortedContracts[2].nsPair)
     }
+    
+    mutating func calcMP(){
+        let sortedContracts = contracts.sorted(by: {Int($0.nsScore) ?? 0 > Int($1.nsScore) ?? 0})
+        
+        //If ns pair numbers are not empty
+        
+        if(sortedContracts[0].nsPair != "") && (sortedContracts[1].nsPair != "") && (sortedContracts[2].nsPair != ""){
+            //Check for tie in first
+            if sortedContracts[0].nsScore == sortedContracts[1].nsScore
+            {
+                //player 1 get 1.5 pts, player 2 gets 1.5 pts
+                let playerNo = sortedContracts[0].nsPair
+                let contractIndex = contracts.firstIndex(where: { $0.nsPair == playerNo})
+                contracts[contractIndex!].nsMP = 1.5
+                print(contracts[contractIndex!].nsMP)
+            } else {
+                // player 1 gets 2
+                
+                //Check for tie in second
+                if (sortedContracts[1].nsScore == sortedContracts[2].nsScore)
+                {
+                    //player 2 gets .5, player 3 gets .5
+                    
+                }
+                else {
+                    //player 2 get 1 pt, player 3 gets 0
+                }
+            }
+        }
+        
+    }
 }
 
 struct Contract {

@@ -15,7 +15,8 @@ struct CaptionView: View{
         HStack {
             Text("Board " + String(match.Boards[boardNo].id + 1)).font(.title)
             Button("NS Rank: ",action: {
-                resultString = match.Boards[boardNo].sortBoard()
+                match.Boards[boardNo].calcMP()
+//                resultString = match.Boards[boardNo].sortBoard()
             })
             .foregroundColor(.black)
 
