@@ -21,13 +21,13 @@ class Match: ObservableObject {
                                                Contract(nsPair:"3",ewPair: "7"),
                                                Contract(nsPair:""),
                                                Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"6")]),
+                                               Contract(nsPair:"")]),
                         Board(id:2,contracts: [Contract(nsPair:""),
                                                Contract(nsPair:"2",ewPair: "4"),
                                                Contract(nsPair:"3",ewPair: "7"),
                                                Contract(nsPair:""),
                                                Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"6")]),
+                                               Contract(nsPair:"")]),
                         Board(id:3,contracts: [Contract(nsPair:""),
                                                Contract(nsPair:"2",ewPair: "4"),
                                                Contract(nsPair:"3",ewPair: "7"),
@@ -45,11 +45,11 @@ struct Board{
     var contracts = [Contract]()
     
     func sortBoard() -> String {
-        let contracts = self.contracts
-        let sortedContracts = contracts.sorted(by: {$0.nsScore > $1.nsScore})
+//        let contracts = self.contracts
+        let sortedContracts = contracts.sorted(by: {Int($0.nsScore) ?? 0 > Int($1.nsScore) ?? 0})
 //        sortedContracts = contracts.sorted(by: {$0.nsScore > $1.nsScore})
-//        print(contracts)
-//        print(sortedContracts)
+        print(contracts)
+        print(sortedContracts)
         return(sortedContracts[0].nsPair + " , " + sortedContracts[1].nsPair + " , " + sortedContracts[2].nsPair)
     }
 }

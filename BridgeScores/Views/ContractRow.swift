@@ -12,20 +12,7 @@ struct TextBox: View{
     var body: some View{
         Text(s)
             .bold()
-            .padding(.horizontal, 3.0)
-            .frame(width:80)
-    }
-}
-
-struct ContractTextBox: View{
-    var legend:String
-    @State var s:String
-    var color:Color = .gray
-    var body: some View{
-        TextField(legend, text: $s)
-            .padding(.horizontal, 3.0)
-            .background(color)
-            .frame(width:80)
+            .frame(width:50)
     }
 }
 

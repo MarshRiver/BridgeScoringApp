@@ -11,9 +11,9 @@ struct LegendRowView:View{
     var body: some View {
         
         HStack{
-            TextBox(s: "NSMP")
-                .frame(width:100)
-            TextBox(s: "NSPair")
+            TextBox(s: "MP")
+                .frame(width:50)
+            TextBox(s: "NS")
                 .frame(width:100)
             TextBox(s: "Bid")
                 .frame(width:100)
@@ -25,9 +25,9 @@ struct LegendRowView:View{
                 .frame(width:100)
             TextBox(s: "EWScore")
                 .frame(width:100)
-            TextBox(s: "EWPair")
-                .frame(width:100)
-            TextBox(s: "EWMP")
+            TextBox(s: "EW")
+                .frame(width:50)
+            TextBox(s: "MP")
         }
         .background(.cyan)
         .padding()
