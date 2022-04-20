@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F333574B28103C9300A4BC97 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F333574A28103C9300A4BC97 /* Match.swift */; };
+		F333574D28103D5B00A4BC97 /* Match6.json in Resources */ = {isa = PBXBuildFile; fileRef = F333574C28103D5B00A4BC97 /* Match6.json */; };
 		F37813B7280C6C1A00659634 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37813B6280C6C1A00659634 /* BoardView.swift */; };
 		F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E83099280B395100CDA2A9 /* BridgeScoresApp.swift */; };
 		F3E8309C280B395100CDA2A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E8309B280B395100CDA2A9 /* ContentView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F333574A28103C9300A4BC97 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		F333574C28103D5B00A4BC97 /* Match6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Match6.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		F37813B6280C6C1A00659634 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		F3E83096280B395100CDA2A9 /* BridgeScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E83099280B395100CDA2A9 /* BridgeScoresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeScoresApp.swift; sourceTree = "<group>"; };
@@ -38,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F333574928103C6B00A4BC97 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F333574C28103D5B00A4BC97 /* Match6.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		F3E8308D280B395100CDA2A9 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 				F3E83099280B395100CDA2A9 /* BridgeScoresApp.swift */,
 				F3E830A8280B39CA00CDA2A9 /* Models */,
 				F3E830A7280B39AE00CDA2A9 /* Views */,
+				F333574928103C6B00A4BC97 /* Data */,
 				F3E8309D280B395400CDA2A9 /* Assets.xcassets */,
 				F3E8309F280B395400CDA2A9 /* Preview Content */,
 			);
@@ -88,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E830A9280B39EC00CDA2A9 /* Contract.swift */,
+				F333574A28103C9300A4BC97 /* Match.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F333574D28103D5B00A4BC97 /* Match6.json in Resources */,
 				F3E830A1280B395400CDA2A9 /* Preview Assets.xcassets in Resources */,
 				F3E8309E280B395400CDA2A9 /* Assets.xcassets in Resources */,
 			);
@@ -167,6 +182,7 @@
 				F37813B7280C6C1A00659634 /* BoardView.swift in Sources */,
 				F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */,
 				F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */,
+				F333574B28103C9300A4BC97 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,128 @@
+[
+    {
+        "Board": {
+            "id": "1",
+            "contracts": [
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "2",
+                    "ewPair": "4"
+                },
+                {
+                    "nsPair": "3",
+                    "ewPair": "5"
+                }, {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                }, {
+                    "nsPair": "6",
+                    "ewPair": "1"
+                }
+                
+                
+            ]
+        }
+    },
+    
+    {
+        "Board": {
+            "id": "2",
+            "contracts": [
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "2",
+                    "ewPair": "4"
+                },
+                {
+                    "nsPair": "3",
+                    "ewPair": "5"
+                }, {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                }, {
+                    "nsPair": "6",
+                    "ewPair": "1"
+                }
+                
+                
+            ]
+        }
+    },
+    {
+        "Board": {
+            "id": "3",
+            "contracts": [
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "2",
+                    "ewPair": "4"
+                },
+                {
+                    "nsPair": "3",
+                    "ewPair": "5"
+                }, {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                }, {
+                    "nsPair": "6",
+                    "ewPair": "1"
+                }
+                
+                
+            ]
+        }
+    },
+    {
+        "Board": {
+            "id": "4",
+            "contracts": [
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "2",
+                    "ewPair": "4"
+                },
+                {
+                    "nsPair": "3",
+                    "ewPair": "5"
+                }, {
+                    "nsPair": "",
+                    "ewPair": ""
+                },
+                {
+                    "nsPair": "",
+                    "ewPair": ""
+                }, {
+                    "nsPair": "6",
+                    "ewPair": "1"
+                }
+                
+                
+            ]
+        }
+    }
+
+]
