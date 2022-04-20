@@ -40,9 +40,11 @@ class Match: ObservableObject {
 }
 
 
-struct Board{
+struct Board: Decodable {
     var id:Int
     var contracts = [Contract]()
+
+//    init(from decoder: Decoder) throws
     
     func sortBoard() -> String {
 //        let contracts = self.contracts
@@ -108,9 +110,9 @@ struct Board{
     }
 }
 
-struct Contract {
+struct Contract:Decodable {
     
-//    var id:Int
+    var id:Int = 0
     var nsPair = ""
     var ewPair = ""
     var bid = ""
