@@ -13,20 +13,22 @@ struct CaptionView: View{
     @State var resultString = ""
     var body: some View{
         HStack {
-            Text("Board " + String(match.Boards[boardNo].id + 1)).font(.title)
-            Button("NS Rank: ",action: {
-                match.Boards[boardNo].calcMP()
-//                resultString = match.Boards[boardNo].sortBoard()
-            })
-            .foregroundColor(.black)
-
-            Text(resultString)
-//                .foregroundColor(.black)
+            Text("Board " + String(match.Boards[boardNo].id + 1))
+                .font(.title)
                 .padding()
-//                .frame(width:80)
-//                .border(.black, width: 2)
-        }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(.cyan)
+//                    .background(Color.white)
+                    .frame(width: 120,height: 40)
+                    .shadow(radius: 15.0,x:-5,y:10)
+                Button("Master Points",action: {
+                    match.Boards[boardNo].calcMP()
+                 })
+                .foregroundColor(.white)
+            }
 
+        }
     }
 }
 struct BoardView: View {
