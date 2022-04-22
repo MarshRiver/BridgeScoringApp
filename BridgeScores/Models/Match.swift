@@ -10,7 +10,8 @@ import Foundation
 
 
 
-class MatchModel: ObservableObject {
+class Match: ObservableObject {
+    
     @Published var Boards = [Board]()
 
     init() {
@@ -18,7 +19,6 @@ class MatchModel: ObservableObject {
         getLocalData()
         
     }
-
     
     func getLocalData() {
         
@@ -41,7 +41,7 @@ class MatchModel: ObservableObject {
             print("Couldn't parse local data")
         }
         
-        print(self.Boards)
+//        print(self.Boards)
     }
     
 

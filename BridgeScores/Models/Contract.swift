@@ -8,43 +8,43 @@
 import Foundation
 
 
-class Match: ObservableObject {
-    @Published var Boards =
-                        [Board(id:0,contracts: [Contract(nsPair:""),
-                                               Contract(nsPair:"2",ewPair: "4"),
-                                               Contract(nsPair:"3",ewPair: "7"),
-                                               Contract(nsPair:""),
-                                               Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"")]),
-                        Board(id:1,contracts: [Contract(nsPair:""),
-                                               Contract(nsPair:"2",ewPair: "4"),
-                                               Contract(nsPair:"3",ewPair: "7"),
-                                               Contract(nsPair:""),
-                                               Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"")]),
-                        Board(id:2,contracts: [Contract(nsPair:""),
-                                               Contract(nsPair:"2",ewPair: "4"),
-                                               Contract(nsPair:"3",ewPair: "7"),
-                                               Contract(nsPair:""),
-                                               Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"")]),
-                        Board(id:3,contracts: [Contract(nsPair:""),
-                                               Contract(nsPair:"2",ewPair: "4"),
-                                               Contract(nsPair:"3",ewPair: "7"),
-                                               Contract(nsPair:""),
-                                               Contract(nsPair:"5",ewPair: "6"),
-                                               Contract(nsPair:"")]),
-                        Board(id:4),
-                        Board(id:4)
-                        ]
+class NoMatch: ObservableObject {
+    @Published var Boards = [Board]()
+//                        [Board(id:0,
+//                               contracts: [Contract(nsPair:""),
+//                                               Contract(nsPair:"2",ewPair: "4"),
+//                                               Contract(nsPair:"3",ewPair: "7"),
+//                                               Contract(nsPair:""),
+//                                               Contract(nsPair:"5",ewPair: "6"),
+//                                               Contract(nsPair:"")]),
+//                        Board(id:1,contracts: [Contract(nsPair:""),
+//                                               Contract(nsPair:"2",ewPair: "4"),
+//                                               Contract(nsPair:"3",ewPair: "7"),
+//                                               Contract(nsPair:""),
+//                                               Contract(nsPair:"5",ewPair: "6"),
+//                                               Contract(nsPair:"")]),
+//                        Board(id:2,contracts: [Contract(nsPair:""),
+//                                               Contract(nsPair:"2",ewPair: "4"),
+//                                               Contract(nsPair:"3",ewPair: "7"),
+//                                               Contract(nsPair:""),
+//                                               Contract(nsPair:"5",ewPair: "6"),
+//                                               Contract(nsPair:"")]),
+//                        Board(id:3,contracts: [Contract(nsPair:""),
+//                                               Contract(nsPair:"2",ewPair: "4"),
+//                                               Contract(nsPair:"3",ewPair: "7"),
+//                                               Contract(nsPair:""),
+//                                               Contract(nsPair:"5",ewPair: "6"),
+//                                               Contract(nsPair:"")]),
+//                        Board(id:4),
+//                        Board(id:4)
+//                        ]
 }
 
 
 struct Board: Decodable {
-    var id:Int
+    var id:Int = 0
     var contracts = [Contract]()
 
-//    init(from decoder: Decoder) throws
     
     func sortBoard() -> String {
 //        let contracts = self.contracts
@@ -110,9 +110,9 @@ struct Board: Decodable {
     }
 }
 
-struct Contract:Decodable {
+struct Contract: Decodable {
     
-    var id:Int = 0
+    var id:UUID?
     var nsPair = ""
     var ewPair = ""
     var bid = ""

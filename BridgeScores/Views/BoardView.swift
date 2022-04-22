@@ -19,7 +19,7 @@ struct CaptionView: View{
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
                     .fill(.cyan)
-//                    .background(Color.white)
+                    .background(Color.white)
                     .frame(width: 120,height: 40)
                     .shadow(radius: 15.0,x:-5,y:10)
                 Button("Master Points",action: {

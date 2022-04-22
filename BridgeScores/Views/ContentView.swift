@@ -48,10 +48,10 @@ struct ContentView: View {
         VStack{
             LegendRowView()
             ScrollView {
-                BoardView(boardNo: 0).padding()
-                BoardView(boardNo: 1).padding()
-                BoardView(boardNo: 2).padding()
-                BoardView(boardNo: 3).padding()
+                let bdCount = match.Boards.count
+                ForEach(0..<bdCount){index in
+                    BoardView(boardNo: index).padding()
+                }
             }
         }
         .environmentObject(match)

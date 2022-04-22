@@ -1,128 +1,103 @@
 [
-    {
-        "Board": {
-            "id": "1",
-            "contracts": [
+    {"id": 0,
+     "contracts": [
                 {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "2",
-                    "ewPair": "4"
+                    "nsPair": "2","ewPair": "4","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "3",
-                    "ewPair": "5"
-                }, {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "3","ewPair": "5","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "",
-                    "ewPair": ""
-                }, {
-                    "nsPair": "6",
-                    "ewPair": "1"
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "6","ewPair": "1","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 }
                 
                 
             ]
-        }
     },
-    
-    {
-        "Board": {
-            "id": "2",
-            "contracts": [
+    {"id": 1,
+     "contracts": [
                 {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "2",
-                    "ewPair": "4"
+                    "nsPair": "2","ewPair": "4","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "3",
-                    "ewPair": "5"
-                }, {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "3","ewPair": "5","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "",
-                    "ewPair": ""
-                }, {
-                    "nsPair": "6",
-                    "ewPair": "1"
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "6","ewPair": "1","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 }
                 
                 
             ]
-        }
     },
-    {
-        "Board": {
-            "id": "3",
-            "contracts": [
+    {"id": 2,
+     "contracts": [
                 {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "2",
-                    "ewPair": "4"
+                    "nsPair": "2","ewPair": "4","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "3",
-                    "ewPair": "5"
-                }, {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "3","ewPair": "5","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "",
-                    "ewPair": ""
-                }, {
-                    "nsPair": "6",
-                    "ewPair": "1"
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "6","ewPair": "1","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 }
                 
                 
             ]
-        }
     },
-    {
-        "Board": {
-            "id": "4",
-            "contracts": [
+    {"id": 3,
+     "contracts": [
                 {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "2",
-                    "ewPair": "4"
+                    "nsPair": "2","ewPair": "4","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "3",
-                    "ewPair": "5"
-                }, {
-                    "nsPair": "",
-                    "ewPair": ""
+                    "nsPair": "3","ewPair": "5","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 },
                 {
-                    "nsPair": "",
-                    "ewPair": ""
-                }, {
-                    "nsPair": "6",
-                    "ewPair": "1"
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "","ewPair": "","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
+                },
+                {
+                    "nsPair": "6","ewPair": "1","bid":"","made":"","down":"","nsScore":"","ewScore":"","nsMP":0.0,"ewMP":0.0
                 }
                 
                 
             ]
-        }
     }
 
-]
+
+    
+    ]
+    
+
