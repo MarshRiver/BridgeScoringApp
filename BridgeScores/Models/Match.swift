@@ -7,23 +7,21 @@
 
 import Foundation
 
-
-
-
 class Match: ObservableObject {
     
     @Published var Boards = [Board]()
 
     init() {
         
-        getLocalData()
+        getLocalData(fileName:"Howell6")
         
     }
     
-    func getLocalData() {
+    func getLocalData(fileName:String) {
+        var fileName:String = ""
         
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: "Match6", withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: fileName, withExtension: "json")
         
         do {
             // Read the file into a data object
