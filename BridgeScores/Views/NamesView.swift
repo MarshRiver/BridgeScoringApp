@@ -7,30 +7,36 @@
 
 import SwiftUI
 
+struct NamesRowView:View {
+    var rowNo:Int
+    @State var playerIndex = 0
+    @EnvironmentObject var belfastPlayers: BelfastPlayers
+    var body: some View{
+        HStack {
+            Text(String(rowNo + 1))
+            Picker("First Name", selection: $playerIndex, content: {
+                ForEach(0..<belfastPlayers.players.count,id:\.self){ i in
+                    Text(belfastPlayers.players[i].firstName + " " +
+                         belfastPlayers.players[i].lastName)
+                }
+            })
+        }
+
+    }
+    
+}
 
 struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
-    @State var playerIndex = 0
     private var noPairs = 6
     var body: some View {
-        VStack {
-            HStack{
-                Picker("First Name", selection: $playerIndex, content: {
-                    ForEach(0..<belfastPlayers.players.count,id:\.self){ i in
-                        Text(belfastPlayers.players[i].firstName + " " + belfastPlayers.players[i].lastName)
-                    }
-                })
-}
-            
+        VStack(alignment:.leading) {
             ForEach(0..<noPairs,id:\.self) { i in
-                HStack {
-                    Text(String(matchPlayers.players[i].pairNo))
-                    TextField("Name", text: $matchPlayers.players[i].playerOne.firstName)
-                    TextField("Name", text: $matchPlayers.players[i].playerTwo.firstName)
-                }
+                NamesRowView(rowNo: i)
             }
         }
+        .environmentObject(belfastPlayers)
     }
 }
 

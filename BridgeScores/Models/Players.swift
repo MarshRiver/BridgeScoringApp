@@ -11,9 +11,32 @@ class BelfastPlayers:ObservableObject {
     @Published var players = [Player]()
     
     init(){
-        players.append(Player(firstName: "Deb", lastName: "Walters"))
-        players.append(Player(firstName: "Jim",lastName: "Cunningham"))
-        players.append(Player(firstName: "Fay", lastName: "Cunningham"))
+//        players.append(Player(firstName: "Deb", lastName: "Walters"))
+//        players.append(Player(firstName: "Jim",lastName: "Cunningham"))
+//        players.append(Player(firstName: "Fay", lastName: "Cunningham"))
+//        players.append(Player(firstName: "Debbie", lastName: ""))
+//        players.append(Player(firstName: "Deb",lastName: "C."))
+//        players.append(Player(firstName: "Joshua", lastName: ""))
+        
+        // Get a url to the json file
+        let jsonUrl = Bundle.main.url(forResource: "Names", withExtension: "json")
+
+        do {
+            // Read the file into a data object
+            let jsonData = try Data(contentsOf: jsonUrl!)
+
+            // Try to decode the json into an array of modules
+            let jsonDecoder = JSONDecoder()
+            let players = try jsonDecoder.decode([Player].self, from: jsonData)
+
+            // Assign parsed modules to modules property
+            self.players = players
+        }
+        catch {
+            // TODO log error
+            print("Couldn't parse local data")
+        }
+
     }
 }
 
@@ -30,7 +53,7 @@ class MatchPlayers: ObservableObject{
     }
 }
 
-struct Player {
+struct Player:Decodable {
      var firstName = ""
      var lastName = ""
 }

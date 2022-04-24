@@ -18,8 +18,7 @@ class Match: ObservableObject {
     }
     
     func getLocalData(fileName:String) {
-        var fileName:String = ""
-        
+
         // Get a url to the json file
         let jsonUrl = Bundle.main.url(forResource: fileName, withExtension: "json")
         

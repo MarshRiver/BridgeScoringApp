@@ -11,8 +11,8 @@ import SwiftUI
 struct BridgeScoresApp: App {
     var body: some Scene {
         WindowGroup {
-            NamesView()
-//            ContentView()
+//            NamesView()
+            ContentView()
         }
     }
 }

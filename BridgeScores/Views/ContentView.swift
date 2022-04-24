@@ -46,10 +46,11 @@ struct ContentView: View {
     @State var resultString = ""
     var body: some View {
         VStack{
+            NamesView()
             LegendRowView()
             ScrollView {
                 let bdCount = match.Boards.count
-                ForEach(0..<bdCount){index in
+                ForEach(0..<bdCount,id:\.self){index in
                     BoardView(boardNo: index).padding()
                 }
             }
