@@ -29,7 +29,7 @@ struct NamesRowView:View {
 struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
-    private var noPairs = 6
+    private var noPairs = 12
     var body: some View {
         VStack(alignment:.leading) {
             ForEach(0..<noPairs,id:\.self) { i in

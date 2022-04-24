@@ -45,17 +45,22 @@ struct ContentView: View {
 
     @State var resultString = ""
     var body: some View {
-        VStack{
-            NamesView()
-            LegendRowView()
-            ScrollView {
-                let bdCount = match.Boards.count
-                ForEach(0..<bdCount,id:\.self){index in
-                    BoardView(boardNo: index).padding()
-                }
+        TabView {
+            NamesView().tabItem {
+                Label("Names",systemImage: "star.fill")
             }
+            VStack{
+                LegendRowView()
+                ScrollView {
+                    let bdCount = match.Boards.count
+                    ForEach(0..<bdCount,id:\.self){index in
+                        BoardView(boardNo: index).padding()
+                    }
+                }
+            }.tabItem{Label("Boards",systemImage:"star.fill")
+            }
+            .environmentObject(match)
         }
-        .environmentObject(match)
     }
 }
 
