@@ -47,8 +47,14 @@ struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
     @State var noPairs = 6
+    @State var eventDate = Date()
+    @State var eventName = "Belfast"
     var body: some View {
         VStack {
+            TextField("Event", text: $eventName)
+            HStack{
+                DatePicker("Event Date", selection: $eventDate)
+            }
             HStack {
                 Text("Number of Pairs:")
                 Picker("Number of Pairs:",selection: $noPairs){
