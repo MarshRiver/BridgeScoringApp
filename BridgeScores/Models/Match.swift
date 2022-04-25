@@ -7,6 +7,13 @@
 
 import Foundation
 
+class MatchData: ObservableObject {
+    @Published var eventName = "Belfast"
+    @Published var noPairs = 6
+    @Published var eventDate = Date()
+    
+}
+
 class Match: ObservableObject {
     
     @Published var Boards = [Board]()

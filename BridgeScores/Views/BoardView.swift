@@ -10,9 +10,11 @@ import SwiftUI
 struct CaptionView: View{
     var boardNo:Int
     @EnvironmentObject var match: Match
+    @EnvironmentObject var matchData: MatchData
     @State var resultString = ""
     var body: some View{
         HStack {
+            Text(String(matchData.noPairs))
             Text("Board " + String(match.Boards[boardNo].id + 1))
                 .font(.title)
                 .padding()
@@ -33,25 +35,32 @@ struct CaptionView: View{
 struct BoardView: View {
     var boardNo:Int
     @EnvironmentObject var match: Match
+    @EnvironmentObject var matchData: MatchData
     var body: some View {
         VStack{
             CaptionView(boardNo: boardNo)
-            ContractRow(rowNo: 0,boardNo: boardNo)
-            ContractRow(rowNo: 1,boardNo: boardNo)
-            ContractRow(rowNo: 2,boardNo: boardNo)
-            ContractRow(rowNo: 3,boardNo: boardNo)
-            ContractRow(rowNo: 4,boardNo: boardNo)
-            ContractRow(rowNo: 5,boardNo: boardNo)
+            ForEach(0..<matchData.noPairs,id:\.self){ i in
+                ContractRow(rowNo:i,boardNo: boardNo)
+            }
+//            ContractRow(rowNo: 0,boardNo: boardNo)
+//            ContractRow(rowNo: 1,boardNo: boardNo)
+//            ContractRow(rowNo: 2,boardNo: boardNo)
+//            ContractRow(rowNo: 3,boardNo: boardNo)
+//            ContractRow(rowNo: 4,boardNo: boardNo)
+//            ContractRow(rowNo: 5,boardNo: boardNo)
         }
         .padding(.bottom)
         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+        .environmentObject(matchData)
     }
 
 }
 
 struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardView(boardNo: 0).environmentObject(Match())
+        BoardView(boardNo: 0)
+            .environmentObject(Match())
+            .environmentObject(MatchData())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
