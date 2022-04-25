@@ -47,11 +47,10 @@ struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
     @EnvironmentObject var matchData: MatchData
-//    @State var eventDate = Date()
-//    @State var eventName = "Belfast"
     var body: some View {
         VStack {
             VStack {
+                //Event grouping
                 VStack {
                     Text("Event")
                         .bold()
@@ -75,7 +74,7 @@ struct NamesView: View {
                 HStack {
                     Text("Number of Pairs:")
                     Picker("Number of Pairs:",selection: $matchData.noPairs){
-                        ForEach(1...12,id:\.self){i in
+                        ForEach(2...12,id:\.self){i in
                             Text(String(i))
                         }
                     }
@@ -97,7 +96,7 @@ struct NamesView: View {
 
 struct NamesView_Previews: PreviewProvider {
     static var previews: some View {
-        NamesView()
+        NamesView().environmentObject(MatchData())
             .previewInterfaceOrientation(.portrait)
     }
 }

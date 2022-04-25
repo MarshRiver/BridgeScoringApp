@@ -11,7 +11,7 @@ class MatchData: ObservableObject {
     @Published var eventName = "Belfast"
     @Published var noPairs = 6
     @Published var eventDate = Date()
-    
+    @Published var boardFileNames = ["Howell-6","Howell-7"]
 }
 
 class Match: ObservableObject {
@@ -20,7 +20,7 @@ class Match: ObservableObject {
 
     init() {
         
-        getLocalData(fileName:"Howell6")
+        getLocalData(fileName:"Howell-6")
         
     }
     
