@@ -7,20 +7,27 @@
 
 import Foundation
 
-class MatchData: ObservableObject {
-    @Published var eventName = "Belfast"
-    @Published var noPairs = 6
-    @Published var eventDate = Date()
-    @Published var boardFileNames = ["Howell-6","Howell-7"]
-}
+//class MatchData: ObservableObject {
+//    @Published var boardFileName = "Howell-6"
+////    @Published var boardFileNames = ["Howell-6","Howell-7"]
+//}
 
 class Match: ObservableObject {
     
+    @Published var noPairs = 6 {
+        didSet {
+            boardFileName = "Howell-" + String(noPairs)
+            getLocalData(fileName: boardFileName)
+        }
+    }
+    @Published var eventDate = Date()
+    @Published var eventName = "Belfast"
+    @Published var boardFileName = "Howell-6"
     @Published var Boards = [Board]()
 
     init() {
         
-        getLocalData(fileName:"Howell-6")
+        getLocalData(fileName:boardFileName)
         
     }
     

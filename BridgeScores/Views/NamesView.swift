@@ -46,7 +46,8 @@ struct NamesRowView:View {
 struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
-    @EnvironmentObject var matchData: MatchData
+//    @EnvironmentObject var matchData: MatchData
+    @EnvironmentObject var match:Match
     var body: some View {
         VStack {
             VStack {
@@ -56,14 +57,14 @@ struct NamesView: View {
                         .bold()
                         .frame(alignment:.leading)
                         .padding(.top)
-                    TextField("Event", text: $matchData.eventName)
+                    TextField("Event", text: $match.eventName)
                         .padding()
                         .background(Color.cyan)
                         .foregroundColor(.white)
                 }
                 .border(Color.black,width:2)
                 HStack{
-                    DatePicker("Date:", selection: $matchData.eventDate, displayedComponents: .date)
+                    DatePicker("Date:", selection: $match.eventDate, displayedComponents: .date)
                         .frame(width: 300)
                         .padding()
                 }
@@ -73,15 +74,15 @@ struct NamesView: View {
             VStack {
                 HStack {
                     Text("Number of Pairs:")
-                    Picker("Number of Pairs:",selection: $matchData.noPairs){
-                        ForEach(2...12,id:\.self){i in
+                    Picker("Number of Pairs:",selection: $match.noPairs){
+                        ForEach(6...7,id:\.self){i in
                             Text(String(i))
                         }
                     }
                 }.padding()
                 
                 VStack(alignment:.leading) {
-                    ForEach(0..<matchData.noPairs,id:\.self) { i in
+                    ForEach(0..<match.noPairs,id:\.self) { i in
                         NamesRowView(rowNo: i)
                     }
                 }
@@ -96,7 +97,8 @@ struct NamesView: View {
 
 struct NamesView_Previews: PreviewProvider {
     static var previews: some View {
-        NamesView().environmentObject(MatchData())
+        NamesView().environmentObject(Match())
+//            .environmentObject(MatchData())
             .previewInterfaceOrientation(.portrait)
     }
 }

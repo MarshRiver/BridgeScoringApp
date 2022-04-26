@@ -21,7 +21,6 @@ struct ContractRow: View {
     var rowNo:Int
     var boardNo:Int
     @EnvironmentObject var match: Match
-//    @State var contract = Contract()
     @State private var ewScore = ""
     @State private var nsScore = ""
 

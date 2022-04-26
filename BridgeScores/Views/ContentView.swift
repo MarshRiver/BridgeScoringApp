@@ -42,7 +42,7 @@ struct LegendRowView:View{
 
 struct ContentView: View {
     @StateObject var match = Match()
-    @StateObject var matchData = MatchData()
+//    @StateObject var matchData = MatchData()
     @State var resultString = ""
     var body: some View {
         TabView {
@@ -57,12 +57,13 @@ struct ContentView: View {
                         BoardView(boardNo: index).padding()
                     }
                 }
-            }.tabItem{Label("Boards",systemImage:"star.fill")
             }
-            .environmentObject(match)
-
+            .tabItem{Label("Boards",systemImage:"star.fill")}
+//            .environmentObject(match)
+            
         }
-        .environmentObject(matchData)
+//        .environmentObject(matchData)
+        .environmentObject(match)
     }
 }
 
