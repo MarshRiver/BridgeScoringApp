@@ -12,6 +12,7 @@
 		F33975DF281343560026CA4F /* NamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33975DE281343560026CA4F /* NamesView.swift */; };
 		F37813B7280C6C1A00659634 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37813B6280C6C1A00659634 /* BoardView.swift */; };
 		F379B50128138B5B00F711BB /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379B50028138B5B00F711BB /* Players.swift */; };
+		F3ACBD06281833D700510F82 /* Howell-8.json in Resources */ = {isa = PBXBuildFile; fileRef = F3ACBD05281833D700510F82 /* Howell-8.json */; };
 		F3AE8BD72814B75000BDAC73 /* Names.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE8BD62814B75000BDAC73 /* Names.json */; };
 		F3B942452816FAF900D045DB /* Howell-7.json in Resources */ = {isa = PBXBuildFile; fileRef = F3B942442816FAF900D045DB /* Howell-7.json */; };
 		F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E83099280B395100CDA2A9 /* BridgeScoresApp.swift */; };
@@ -28,6 +29,7 @@
 		F33975DE281343560026CA4F /* NamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesView.swift; sourceTree = "<group>"; };
 		F37813B6280C6C1A00659634 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		F379B50028138B5B00F711BB /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		F3ACBD05281833D700510F82 /* Howell-8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-8.json"; sourceTree = "<group>"; };
 		F3AE8BD62814B75000BDAC73 /* Names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Names.json; sourceTree = "<group>"; };
 		F3B942442816FAF900D045DB /* Howell-7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-7.json"; sourceTree = "<group>"; };
 		F3E83096280B395100CDA2A9 /* BridgeScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BridgeScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 			children = (
 				F333574C28103D5B00A4BC97 /* Howell-6.json */,
 				F3B942442816FAF900D045DB /* Howell-7.json */,
+				F3ACBD05281833D700510F82 /* Howell-8.json */,
 				F3AE8BD62814B75000BDAC73 /* Names.json */,
 			);
 			path = Data;
@@ -176,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3ACBD06281833D700510F82 /* Howell-8.json in Resources */,
 				F3B942452816FAF900D045DB /* Howell-7.json in Resources */,
 				F333574D28103D5B00A4BC97 /* Howell-6.json in Resources */,
 				F3E830A1280B395400CDA2A9 /* Preview Assets.xcassets in Resources */,

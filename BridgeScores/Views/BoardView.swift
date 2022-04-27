@@ -10,7 +10,6 @@ import SwiftUI
 struct CaptionView: View{
     var boardNo:Int
     @EnvironmentObject var match: Match
-//    @EnvironmentObject var matchData: MatchData
     @State var resultString = ""
     var body: some View{
         HStack {
@@ -37,7 +36,6 @@ struct CaptionView: View{
 struct BoardView: View {
     var boardNo:Int
     @EnvironmentObject var match: Match
-//    @EnvironmentObject var matchData: MatchData
     var body: some View {
         VStack{
             CaptionView(boardNo: boardNo)
@@ -47,7 +45,6 @@ struct BoardView: View {
         }
         .padding(.bottom)
         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-//        .environmentObject(matchData)
     }
 
 }
@@ -56,7 +53,6 @@ struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         BoardView(boardNo: 0)
             .environmentObject(Match())
-//            .environmentObject(MatchData())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

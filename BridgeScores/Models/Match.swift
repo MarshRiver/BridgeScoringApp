@@ -7,11 +7,6 @@
 
 import Foundation
 
-//class MatchData: ObservableObject {
-//    @Published var boardFileName = "Howell-6"
-////    @Published var boardFileNames = ["Howell-6","Howell-7"]
-//}
-
 class Match: ObservableObject {
     
     @Published var noPairs = 6 {

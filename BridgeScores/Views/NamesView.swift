@@ -46,7 +46,6 @@ struct NamesRowView:View {
 struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
-//    @EnvironmentObject var matchData: MatchData
     @EnvironmentObject var match:Match
     var body: some View {
         VStack {
@@ -75,10 +74,11 @@ struct NamesView: View {
                 HStack {
                     Text("Number of Pairs:")
                     Picker("Number of Pairs:",selection: $match.noPairs){
-                        ForEach(6...7,id:\.self){i in
+                        ForEach(6...8,id:\.self){i in
                             Text(String(i))
                         }
                     }
+                    Text(String(match.noPairs))
                 }.padding()
                 
                 VStack(alignment:.leading) {
