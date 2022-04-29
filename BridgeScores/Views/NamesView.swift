@@ -78,6 +78,7 @@ struct NamesView: View {
                             Text(String(i))
                         }
                     }
+                    .tag("noPlayersPicker")
                     Text(String(match.noPairs))
                 }.padding()
                 
@@ -98,7 +99,6 @@ struct NamesView: View {
 struct NamesView_Previews: PreviewProvider {
     static var previews: some View {
         NamesView().environmentObject(Match())
-//            .environmentObject(MatchData())
             .previewInterfaceOrientation(.portrait)
     }
 }

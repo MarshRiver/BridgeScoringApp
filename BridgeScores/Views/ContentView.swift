@@ -42,7 +42,6 @@ struct LegendRowView:View{
 
 struct ContentView: View {
     @StateObject var match = Match()
-//    @StateObject var matchData = MatchData()
     @State var resultString = ""
     var body: some View {
         TabView {
@@ -52,17 +51,17 @@ struct ContentView: View {
             VStack{
                 LegendRowView()
                 ScrollView {
-                    let bdCount = match.Boards.count
-                    ForEach(0..<bdCount,id:\.self){index in
-                        BoardView(boardNo: index).padding()
+                    ForEach(match.Boards,id:\.boardNo){ board in
+                        BoardView(boardNo: board.boardNo).padding()
                     }
+//                    let bdCount = match.Boards.count
+//                    ForEach(0..<bdCount,id:\.self){index in
+//                        BoardView(boardNo: index).padding()
+//                    }
                 }
             }
             .tabItem{Label("Boards",systemImage:"star.fill")}
-//            .environmentObject(match)
-            
         }
-//        .environmentObject(matchData)
         .environmentObject(match)
     }
 }

@@ -10,9 +10,15 @@ import Foundation
 class Match: ObservableObject {
     
     @Published var noPairs = 6 {
-        didSet {
-            boardFileName = "Howell-" + String(noPairs)
+        didSet(newValue) {
+//            boardFileName = "Howell-" + String(newValue)
+//            getLocalData(fileName: boardFileName)
+//            print("DidSet " + String(newValue) + "  " + boardFileName)
+        }
+        willSet{
+            boardFileName = "Howell-" + String(newValue)
             getLocalData(fileName: boardFileName)
+            print(String(newValue) + "  " + boardFileName )
         }
     }
     @Published var eventDate = Date()

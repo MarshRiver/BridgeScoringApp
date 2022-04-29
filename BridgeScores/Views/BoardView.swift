@@ -13,20 +13,19 @@ struct CaptionView: View{
     @State var resultString = ""
     var body: some View{
         HStack {
-            Text(String(match.noPairs))
-            Text("Board " + String(match.Boards[boardNo].id + 1))
+            Text("Board " + String(match.Boards[boardNo].boardNo + 1))
                 .font(.title)
                 .padding()
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(.cyan)
-                    .frame(width: 120,height: 40)
-                    .shadow(radius: 15.0,x:-5,y:10)
-                Button("Master Points",action: {
-                    match.Boards[boardNo].calcMP()
-                 })
-                .foregroundColor(.white)
-            }
+//            ZStack {
+//                RoundedRectangle(cornerRadius: 15)
+//                    .fill(.cyan)
+//                    .frame(width: 120,height: 40)
+//                    .shadow(radius: 15.0,x:-5,y:10)
+//                Button("Master Points",action: {
+//                    match.Boards[boardNo].calcMP()
+//                 })
+//                .foregroundColor(.white)
+//            }
 
         }
     }
@@ -39,7 +38,9 @@ struct BoardView: View {
     var body: some View {
         VStack{
             CaptionView(boardNo: boardNo)
-            ForEach(0..<match.noPairs,id:\.self){ i in
+            let noPairs = match.noPairs
+
+            ForEach(0..<noPairs,id:\.self){ i in
                 ContractRow(rowNo:i,boardNo: boardNo)
             }
         }
