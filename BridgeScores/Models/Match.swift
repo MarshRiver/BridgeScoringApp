@@ -9,12 +9,14 @@ import Foundation
 
 class Match: ObservableObject {
     
-    @Published var noPairs = 6 {
-        didSet(newValue) {
+    @Published var isLoaded = false
+    @Published var noPairs = 6
+    {
+//        didSet(newValue) {
 //            boardFileName = "Howell-" + String(newValue)
 //            getLocalData(fileName: boardFileName)
 //            print("DidSet " + String(newValue) + "  " + boardFileName)
-        }
+//        }
         willSet{
             boardFileName = "Howell-" + String(newValue)
             getLocalData(fileName: boardFileName)
@@ -26,7 +28,7 @@ class Match: ObservableObject {
     @Published var boardFileName = "Howell-6"
     @Published var Boards = [Board]()
 
-    init() {
+    required init() {
         
         getLocalData(fileName:boardFileName)
         
@@ -34,6 +36,7 @@ class Match: ObservableObject {
     
     func getLocalData(fileName:String) {
 
+        isLoaded = false
         // Get a url to the json file
         let jsonUrl = Bundle.main.url(forResource: fileName, withExtension: "json")
         
@@ -52,7 +55,7 @@ class Match: ObservableObject {
             // TODO log error
             print("Couldn't parse local data")
         }
-        
+        isLoaded = true
 //        print(self.Boards)
     }
     

@@ -78,7 +78,12 @@ struct NamesView: View {
                             Text(String(i))
                         }
                     }
-                    .tag("noPlayersPicker")
+//                    .onChange(of: match.noPairs) { newValue in
+////                        let newName = "Howell-" + String(newValue)
+//                        match.isLoaded = false
+////                        match.boardFileName = newName
+////                        match.getLocalData(fileName: newName)
+//                    }
                     Text(String(match.noPairs))
                 }.padding()
                 

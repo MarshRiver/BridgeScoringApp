@@ -73,40 +73,42 @@ struct ContractRow: View {
     
     var body: some View {
         VStack {
-            HStack{
-                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].nsMP))
-                    .font(.title2)
-                TextField("NSPair",text: $match.Boards[boardNo].contracts[rowNo].nsPair)
-                    .font(.title2)
-                    .frame(width:100)
-                TextField("Bid",text: $match.Boards[boardNo].contracts[rowNo].bid)
-                    .font(.title2)
-                    .frame(width:100)
-                TextField("Made",text: $match.Boards[boardNo].contracts[rowNo].made)
-                    .font(.title2)
-                    .frame(width:100)
-                TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
-                    .font(.title2)
-                    .frame(width:100)
-                TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
-                    .font(.title2)
-                    .keyboardType(.numberPad)
-                    .frame(width:100)
-                    .onSubmit{
-                        match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
-                    }
-                TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
-                    .font(.title2)
-                    .keyboardType(.numberPad)
-                    .frame(width:100)
-                    .onSubmit{
-                        match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
-                    }
-                TextField("EWPair",text: $match.Boards[boardNo].contracts[rowNo].ewPair)
-                    .frame(width:100)
-                    .font(.title2)
-                TextBox(s: String(match.Boards[boardNo].contracts[rowNo].ewMP))
-                    .font(.title2)
+            if (boardNo < match.Boards.count) && (rowNo < match.Boards[boardNo].contracts.count) {
+                HStack{
+                    TextBox(s: String(match.Boards[boardNo].contracts[rowNo].nsMP))
+                        .font(.title2)
+                    TextField("NSPair",text: $match.Boards[boardNo].contracts[rowNo].nsPair)
+                        .font(.title2)
+                        .frame(width:100)
+                    TextField("Bid",text: $match.Boards[boardNo].contracts[rowNo].bid)
+                        .font(.title2)
+                        .frame(width:100)
+                    TextField("Made",text: $match.Boards[boardNo].contracts[rowNo].made)
+                        .font(.title2)
+                        .frame(width:100)
+                    TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
+                        .font(.title2)
+                        .frame(width:100)
+                    TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
+                        .font(.title2)
+                        .keyboardType(.numberPad)
+                        .frame(width:100)
+                        .onSubmit{
+                            match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
+                        }
+                    TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
+                        .font(.title2)
+                        .keyboardType(.numberPad)
+                        .frame(width:100)
+                        .onSubmit{
+                            match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
+                        }
+                    TextField("EWPair",text: $match.Boards[boardNo].contracts[rowNo].ewPair)
+                        .frame(width:100)
+                        .font(.title2)
+                    TextBox(s: String(match.Boards[boardNo].contracts[rowNo].ewMP))
+                        .font(.title2)
+                }
             }
         }
         .padding(.bottom, 2.0)

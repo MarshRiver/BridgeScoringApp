@@ -48,19 +48,23 @@ struct ContentView: View {
             NamesView().tabItem {
                 Label("Names",systemImage: "star.fill")
             }
+            if match.isLoaded{
             VStack{
                 LegendRowView()
-                ScrollView {
-                    ForEach(match.Boards,id:\.boardNo){ board in
-                        BoardView(boardNo: board.boardNo).padding()
+                    ScrollView {
+                        ForEach(match.Boards,id:\.boardNo){ board in
+                            if board.boardNo < match.Boards.count{
+                                BoardView(boardNo: board.boardNo).padding()
+                            }
+                        }
+    //                    let bdCount = match.Boards.count
+    //                    ForEach(0..<bdCount,id:\.self){index in
+    //                        BoardView(boardNo: index).padding()
+    //                    }
                     }
-//                    let bdCount = match.Boards.count
-//                    ForEach(0..<bdCount,id:\.self){index in
-//                        BoardView(boardNo: index).padding()
-//                    }
                 }
+                .tabItem{Label("Boards",systemImage:"star.fill")}
             }
-            .tabItem{Label("Boards",systemImage:"star.fill")}
         }
         .environmentObject(match)
     }
