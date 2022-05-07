@@ -13,32 +13,25 @@ struct NamesRowView:View {
     @State var playerIndex1 = 0
     @EnvironmentObject var belfastPlayers: BelfastPlayers
     var body: some View{
-        HStack {
-            Text(String(rowNo + 1)).frame(width:30)
+        HStack(alignment: .center) {
+            Text(String(rowNo + 1))
+                .frame(width:30)
             Picker("First Name", selection: $playerIndex, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
-                        .frame(width: 200)
-                        .foregroundColor(.pink)
                 }
-            }).foregroundColor(.black)
-            Spacer()
-            Picker("First Name", selection: $playerIndex1, content: {
+            })
+            Picker("Last Name", selection: $playerIndex1, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
-                    .frame(width:200)
-                    .foregroundColor(.black)
                 }
             })
-            .foregroundColor(.black)
-            Spacer()
         }
-        .frame(width: 400, alignment: .leading)
-
+        
     }
     
 }
@@ -46,19 +39,20 @@ struct NamesRowView:View {
 struct NamesView: View {
     @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
-    @EnvironmentObject var match:Match
+    @EnvironmentObject var event:Event
+
     var body: some View {
         
-        VStack {
+        VStack(alignment:.leading) {
 
             //Event grouping
             Form {
                 Group{
-                TextField("Event: ", text: $match.eventName)
+                TextField("Event: ", text: $event.eventName)
                     .padding()
 //                    .background(Color.cyan)
                     .foregroundColor(.black)
-                DatePicker("Date:", selection: $match.eventDate, displayedComponents: .date)
+                DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
                     .padding()
                 }
                 .frame(height: 50.0)
@@ -67,11 +61,11 @@ struct NamesView: View {
 
             
             VStack {
-                ForEach(0..<match.noPairs,id:\.self) { i in
+                ForEach(0..<event.noPairs,id:\.self) { i in
                     NamesRowView(rowNo: i)
                 }
             }
-            .padding(.leading, 100.0)
+//            .padding(.leading, 100.0)
         }
         .environmentObject(belfastPlayers)
         .padding()
@@ -80,7 +74,7 @@ struct NamesView: View {
 
 struct NamesView_Previews: PreviewProvider {
     static var previews: some View {
-        NamesView().environmentObject(Match())
+        NamesView().environmentObject(Event())
             .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

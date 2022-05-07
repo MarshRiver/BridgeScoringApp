@@ -8,25 +8,33 @@
 import SwiftUI
 
 struct TopView: View {
-    @State var noPairs = 6
     @State var isSelected = false
+    @StateObject var event = Event()
     var body: some View {
-        if isSelected {ContentView(noPairs:noPairs)}
+        if isSelected {
+            ContentView().environmentObject(event)
+            
+        }
         else {
             NavigationView{
-                Form {
-                    Picker("Number of Pairs:",selection: $noPairs){
-                        ForEach(6...8,id:\.self){i in
-                            Text(String(i))
+                VStack(alignment: .center) {
+                    Form {
+                        Picker("Number of Pairs:",selection: $event.noPairs){
+                            ForEach(6...8,id:\.self){i in
+                                Text(String(i))
+                            }
+                        }
+                        Text("Lets Play").onTapGesture {
+                            isSelected = true
                         }
                     }
-                    Text("Lets Play").onTapGesture {
-                        isSelected = true
-                    }
+                    .frame( alignment: .top)
+                    .frame(height: 100.0)
+                    .navigationTitle("Bridge Scoring")
+                
+                NamesView()
                 }
-                .frame( alignment: .top)
-                .navigationTitle("Bridge Scoring")
-            }
+            }.environmentObject(event)
             
         }
     }

@@ -33,8 +33,16 @@ class BelfastPlayers:ObservableObject {
     }
 }
 
+class Event: ObservableObject {
+    @Published var noPairs = 6
+    @Published var eventDate = Date()
+    @Published var eventName = "Belfast"
 
-class MatchPlayers: ObservableObject{
+    @Published var matchPlayers = MatchPlayers()
+    
+}
+
+class MatchPlayers: ObservableObject {
     var noPairs:Int = 6
     @Published var players = [Pair]()
     
