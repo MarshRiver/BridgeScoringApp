@@ -48,62 +48,39 @@ struct NamesView: View {
     @State var belfastPlayers = BelfastPlayers()
     @EnvironmentObject var match:Match
     var body: some View {
-        VStack {
-            VStack {
-                //Event grouping
-                VStack {
-                    Text("Event")
-                        .bold()
-                        .frame(alignment:.leading)
-                        .padding(.top)
-                    TextField("Event", text: $match.eventName)
-                        .padding()
-                        .background(Color.cyan)
-                        .foregroundColor(.white)
-                }
-                .border(Color.black,width:2)
-                HStack{
-                    DatePicker("Date:", selection: $match.eventDate, displayedComponents: .date)
-                        .frame(width: 300)
-                        .padding()
-                }
-            }
-            .border(Color.black,width: 2)
-            //Player grouping
-            VStack {
-                HStack {
-                    Text("Number of Pairs:")
-                    Picker("Number of Pairs:",selection: $match.noPairs){
-                        ForEach(6...8,id:\.self){i in
-                            Text(String(i))
-                        }
-                    }
-//                    .onChange(of: match.noPairs) { newValue in
-////                        let newName = "Howell-" + String(newValue)
-//                        match.isLoaded = false
-////                        match.boardFileName = newName
-////                        match.getLocalData(fileName: newName)
-//                    }
-                    Text(String(match.noPairs))
-                }.padding()
-                
-                VStack(alignment:.leading) {
-                    ForEach(0..<match.noPairs,id:\.self) { i in
-                        NamesRowView(rowNo: i)
-                    }
-                }
-                .environmentObject(belfastPlayers)
-                .padding()
-            }
-            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 2)
-        }
         
+        VStack {
+
+            //Event grouping
+            Form {
+                Group{
+                TextField("Event: ", text: $match.eventName)
+                    .padding()
+//                    .background(Color.cyan)
+                    .foregroundColor(.black)
+                DatePicker("Date:", selection: $match.eventDate, displayedComponents: .date)
+                    .padding()
+                }
+                .frame(height: 50.0)
+            }
+            .frame(height: 200,alignment: .top)
+
+            
+            VStack {
+                ForEach(0..<match.noPairs,id:\.self) { i in
+                    NamesRowView(rowNo: i)
+                }
+            }
+            .padding(.leading, 100.0)
+        }
+        .environmentObject(belfastPlayers)
+        .padding()
     }
 }
 
 struct NamesView_Previews: PreviewProvider {
     static var previews: some View {
         NamesView().environmentObject(Match())
-            .previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

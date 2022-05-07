@@ -11,10 +11,10 @@ struct TopView: View {
     @State var noPairs = 6
     @State var isSelected = false
     var body: some View {
-        if isSelected {ContentView()}
+        if isSelected {ContentView(noPairs:noPairs)}
         else {
             NavigationView{
-                VStack {
+                Form {
                     Picker("Number of Pairs:",selection: $noPairs){
                         ForEach(6...8,id:\.self){i in
                             Text(String(i))
@@ -24,8 +24,10 @@ struct TopView: View {
                         isSelected = true
                     }
                 }
+                .frame( alignment: .top)
+                .navigationTitle("Bridge Scoring")
             }
-
+            
         }
     }
 }

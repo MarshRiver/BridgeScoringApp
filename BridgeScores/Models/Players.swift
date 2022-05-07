@@ -11,13 +11,6 @@ class BelfastPlayers:ObservableObject {
     @Published var players = [Player]()
     
     init(){
-//        players.append(Player(firstName: "Deb", lastName: "Walters"))
-//        players.append(Player(firstName: "Jim",lastName: "Cunningham"))
-//        players.append(Player(firstName: "Fay", lastName: "Cunningham"))
-//        players.append(Player(firstName: "Debbie", lastName: ""))
-//        players.append(Player(firstName: "Deb",lastName: "C."))
-//        players.append(Player(firstName: "Joshua", lastName: ""))
-        
         // Get a url to the json file
         let jsonUrl = Bundle.main.url(forResource: "Names", withExtension: "json")
 

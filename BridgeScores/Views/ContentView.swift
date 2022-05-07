@@ -41,6 +41,7 @@ struct LegendRowView:View{
 }
 
 struct ContentView: View {
+    var noPairs:Int 
     @StateObject var match = Match()
     @State var resultString = ""
     var body: some View {
@@ -68,7 +69,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(noPairs:6)
             .previewInterfaceOrientation(.portrait)
     }
 }
