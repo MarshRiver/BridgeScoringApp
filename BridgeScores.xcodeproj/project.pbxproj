@@ -21,6 +21,7 @@
 		F3E830A1280B395400CDA2A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E830A0280B395400CDA2A9 /* Preview Assets.xcassets */; };
 		F3E830AA280B39EC00CDA2A9 /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E830A9280B39EC00CDA2A9 /* Contract.swift */; };
 		F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E830AB280B3BAF00CDA2A9 /* ContractRow.swift */; };
+		F3F796D32825D57300D93CBE /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F796D22825D57300D93CBE /* TopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F3E830A0280B395400CDA2A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3E830A9280B39EC00CDA2A9 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		F3E830AB280B3BAF00CDA2A9 /* ContractRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRow.swift; sourceTree = "<group>"; };
+		F3F796D22825D57300D93CBE /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E83099280B395100CDA2A9 /* BridgeScoresApp.swift */,
+				F3F796D22825D57300D93CBE /* TopView.swift */,
 				F3E830A8280B39CA00CDA2A9 /* Models */,
 				F3E830A7280B39AE00CDA2A9 /* Views */,
 				F333574928103C6B00A4BC97 /* Data */,
@@ -202,6 +205,7 @@
 				F33975DF281343560026CA4F /* NamesView.swift in Sources */,
 				F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */,
 				F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */,
+				F3F796D32825D57300D93CBE /* TopView.swift in Sources */,
 				F333574B28103C9300A4BC97 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

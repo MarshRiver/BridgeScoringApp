@@ -57,10 +57,6 @@ struct ContentView: View {
                                 BoardView(boardNo: board.boardNo).padding()
                             }
                         }
-    //                    let bdCount = match.Boards.count
-    //                    ForEach(0..<bdCount,id:\.self){index in
-    //                        BoardView(boardNo: index).padding()
-    //                    }
                     }
                 }
                 .tabItem{Label("Boards",systemImage:"star.fill")}

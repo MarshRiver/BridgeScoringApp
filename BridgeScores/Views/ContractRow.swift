@@ -91,14 +91,14 @@ struct ContractRow: View {
                         .frame(width:100)
                     TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
                         .font(.title2)
-                        .keyboardType(.numberPad)
+//                        .keyboardType(.numberPad)
                         .frame(width:100)
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
                         }
                     TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
                         .font(.title2)
-                        .keyboardType(.numberPad)
+//                        .keyboardType(.numberPad)
                         .frame(width:100)
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
