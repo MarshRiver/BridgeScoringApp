@@ -42,13 +42,19 @@ struct LegendRowView:View{
 
 struct ContentView: View {
     @StateObject var match = Match()
+    @EnvironmentObject var event: Event
     @State var resultString = ""
     var body: some View {
         TabView {
-            NamesView().tabItem {
-                Label("Names",systemImage: "star.fill")
-            }
+//            NamesView().tabItem {
+//                Label("Names",systemImage: "star.fill")
+//            }
+            
+            Text(String(match.noPairs)).tabItem {
+                                Label("Names",systemImage: "star.fill")
+                            }
             if match.isLoaded{
+            
             VStack{
                 LegendRowView()
                     ScrollView {
@@ -63,6 +69,9 @@ struct ContentView: View {
             }
         }
         .environmentObject(match)
+        .onAppear(){
+            match.noPairs = event.noPairs
+        }
     }
 }
 

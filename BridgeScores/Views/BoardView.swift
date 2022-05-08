@@ -27,12 +27,13 @@ struct CaptionView: View{
 struct BoardView: View {
     var boardNo:Int
     @EnvironmentObject var match: Match
+    @EnvironmentObject var event: Event
     var body: some View {
         
         VStack{
             CaptionView(boardNo: boardNo)
 
-            ForEach(0..<match.noPairs,id:\.self){ i in
+            ForEach(0..<event.noPairs,id:\.self){ i in
                 if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
                     ContractRow(rowNo:i,boardNo: boardNo)
                 }
@@ -49,6 +50,7 @@ struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         BoardView(boardNo: 0)
             .environmentObject(Match())
+            .environmentObject(Event())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

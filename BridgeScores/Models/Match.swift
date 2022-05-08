@@ -8,23 +8,13 @@
 import Foundation
 
 class Match: ObservableObject {
-    
-    @Published var isLoaded = false
-    @Published var noPairs = 6
-    {
-//        didSet(newValue) {
-//            boardFileName = "Howell-" + String(newValue)
-//            getLocalData(fileName: boardFileName)
-//            print("DidSet " + String(newValue) + "  " + boardFileName)
-//        }
-        willSet{
+    @Published var noPairs = 6 {
+        willSet{ newValue
             boardFileName = "Howell-" + String(newValue)
             getLocalData(fileName: boardFileName)
-            print(String(newValue) + "  " + boardFileName )
         }
     }
-    @Published var eventDate = Date()
-    @Published var eventName = "Belfast"
+    @Published var isLoaded = false
     @Published var boardFileName = "Howell-6"
     @Published var Boards = [Board]()
 

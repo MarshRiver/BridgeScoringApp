@@ -12,6 +12,7 @@ struct TopView: View {
     @StateObject var event = Event()
     var body: some View {
         if isSelected {
+            
             ContentView().environmentObject(event)
             
         }
@@ -32,7 +33,7 @@ struct TopView: View {
                     .frame(height: 100.0)
                     .navigationTitle("Bridge Scoring")
                 
-                NamesView()
+                NamesView().environmentObject(event)
                 }
             }.environmentObject(event)
             
