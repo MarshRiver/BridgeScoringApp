@@ -9,7 +9,7 @@ import Foundation
 
 class Match: ObservableObject {
     @Published var noPairs = 6 {
-        willSet{ newValue
+        willSet{
             boardFileName = "Howell-" + String(newValue)
             getLocalData(fileName: boardFileName)
         }

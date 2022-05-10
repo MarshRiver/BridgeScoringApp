@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "61E7D219-AE9E-4ED1-BD18-29DC203CE240"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeScores/Models/Match.swift"
@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D42B3A4F-E8D2-4E46-B54B-E34EDEEF8353"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeScores/Views/TopView.swift"
@@ -168,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7F20E220-B042-46C0-A9B6-D35C11EA2272"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeScores/Models/Match.swift"
@@ -184,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C949862B-6100-49CB-A00C-D8D60358B23E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeScores/Views/ContentView.swift"

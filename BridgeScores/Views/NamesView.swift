@@ -18,21 +18,25 @@ struct NamesRowView:View {
         HStack(alignment: .center) {
             Text(String(rowNo + 1))
                 .frame(width:30)
+//            Spacer()
             Picker("First Name", selection: $playerIndex, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
                 }
-            })
+            }).padding(.trailing)
+            Spacer()
             Picker("Last Name", selection: $playerIndex1, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
                 }
-            })
+            }).padding(.leading)
+//            Spacer()
         }
+        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
@@ -58,7 +62,7 @@ struct NamesView: View {
             //Name picker
             VStack {
                 ForEach(0..<event.noPairs,id:\.self) { i in
-                    NamesRowView(rowNo: i)
+                    NamesRowView(rowNo: i).frame(width: 400, height: 48, alignment: .topLeading)
                 }
             }
         }
