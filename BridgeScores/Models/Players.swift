@@ -46,13 +46,13 @@ class MatchPlayers: ObservableObject {
     }
 }
 
-struct Player:Decodable {
-     var firstName = ""
-     var lastName = ""
-}
-
 struct Pair {
     var pairNo:Int = 0
     var playerOne = Player()
     var playerTwo = Player()
+}
+
+struct Player:Decodable {
+     var firstName = ""
+     var lastName = ""
 }

@@ -21,6 +21,7 @@
 		F3E830A1280B395400CDA2A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3E830A0280B395400CDA2A9 /* Preview Assets.xcassets */; };
 		F3E830AA280B39EC00CDA2A9 /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E830A9280B39EC00CDA2A9 /* Contract.swift */; };
 		F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E830AB280B3BAF00CDA2A9 /* ContractRow.swift */; };
+		F3F209A1282AF4370063A2E9 /* MPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F209A0282AF4370063A2E9 /* MPModel.swift */; };
 		F3F312492826F13100BD47A1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F312482826F13100BD47A1 /* Event.swift */; };
 		F3F796D32825D57300D93CBE /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F796D22825D57300D93CBE /* TopView.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		F3E830A0280B395400CDA2A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3E830A9280B39EC00CDA2A9 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		F3E830AB280B3BAF00CDA2A9 /* ContractRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractRow.swift; sourceTree = "<group>"; };
+		F3F209A0282AF4370063A2E9 /* MPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPModel.swift; sourceTree = "<group>"; };
 		F3F312482826F13100BD47A1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F3F796D22825D57300D93CBE /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				F333574A28103C9300A4BC97 /* Match.swift */,
 				F379B50028138B5B00F711BB /* Players.swift */,
 				F3F312482826F13100BD47A1 /* Event.swift */,
+				F3F209A0282AF4370063A2E9 /* MPModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				F3E8309C280B395100CDA2A9 /* ContentView.swift in Sources */,
 				F37813B7280C6C1A00659634 /* BoardView.swift in Sources */,
 				F3F312492826F13100BD47A1 /* Event.swift in Sources */,
+				F3F209A1282AF4370063A2E9 /* MPModel.swift in Sources */,
 				F33975DF281343560026CA4F /* NamesView.swift in Sources */,
 				F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */,
 				F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */,
