@@ -23,8 +23,6 @@ class MatchPointTable {
         
         //Assign current board contracts to our board array
         var board = match.Boards[boardNo].contracts
-        var MP = Array(repeating: 0.0 , count: board.count)
-        var ties = Array(repeating: 0.0 , count: board.count)
 
         //Remove contracts with no players
         board.removeAll(where: {
@@ -40,6 +38,7 @@ class MatchPointTable {
         //Sort by NSscore
         board.sort{Int($0.nsScore) ?? minusInfinity > Int($1.nsScore) ?? minusInfinity}
         //Calculate Ties
+        var ties = Array(repeating: 0.0 , count: board.count)
         for outerIndex in 0..<board.count {
             for innerIndex in 0..<board.count{
                 if board[innerIndex].nsScore == board[outerIndex].nsScore{
@@ -47,7 +46,8 @@ class MatchPointTable {
                 }
             }
         }
-        //Calculate rank
+        
+        //Calculate rank, code borrowed from forum
         var index = 0
         var prev: Int?              // previous score
         var currentRank = 0
@@ -63,20 +63,15 @@ class MatchPointTable {
             }
             rankingList.append((contract.nsPair,nsScoreInt,currentRank))
         }
+        
         //Caluclate master points
+        var MP = Array(repeating: 0.0 , count: board.count)
         index = 0
         for elem in rankingList {
             
             MP[index] = 3.0 - Double(elem.rank) - (ties[index] - 1.0) * 0.5
             index += 1
         }
-
-
-        
-        
-//        matchTable = Array(repeating: MatchPointRow(), count: noPairs)
-        
-        
     }
 }
 
