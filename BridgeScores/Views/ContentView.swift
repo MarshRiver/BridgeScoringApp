@@ -46,13 +46,13 @@ struct ContentView: View {
     @State var resultString = ""
     var body: some View {
         TabView {
-//            NamesView().tabItem {
-//                Label("Names",systemImage: "star.fill")
-//            }
+            NamesView().tabItem {
+                Label("Names",systemImage: "star.fill")
+            }
             
-            Text(String(match.noPairs)).tabItem {
-                                Label("Names",systemImage: "star.fill")
-                            }
+//            Text(String(match.noPairs)).tabItem {
+//                                Label("Names",systemImage: "star.fill")
+//                            }
             if match.isLoaded{
             
             VStack{

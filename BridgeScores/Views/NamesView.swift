@@ -48,17 +48,17 @@ struct NamesView: View {
     var body: some View {
         VStack(alignment:.leading) {
             //Event grouping
-            Form {
-                Group{
-                TextField("Event: ", text: $event.eventName)
-                    .padding()
-                    .foregroundColor(.black)
-                DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
-                    .padding()
-                }
-                .frame(height: 50.0)
-            }
-            .frame(height: 200,alignment: .top)
+//            Form {
+//                Group{
+//                TextField("Event: ", text: //$event.eventName)
+//                    .padding()
+//                    .foregroundColor(.black)
+//                DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
+//                    .padding()
+//                }
+//                .frame(height: 50.0)
+//            }
+//            .frame(height: 200,alignment: .top)
             //Name picker
             VStack {
                 ForEach(0..<event.noPairs,id:\.self) { i in

@@ -20,6 +20,17 @@ struct TopView: View {
             NavigationView{
                 VStack(alignment: .center) {
                     Form {
+                        Group{
+                        TextField("Event: ", text: $event.eventName)
+                            .padding()
+                            .foregroundColor(.black)
+                        DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
+                            .padding()
+                        }
+                        .frame(height: 50.0)
+                    }
+                    .frame(height: 200,alignment: .top)
+                    Form {
                         Picker("Number of Pairs:",selection: $event.noPairs){
                             ForEach(6...8,id:\.self){i in
                                 Text(String(i))
@@ -30,10 +41,10 @@ struct TopView: View {
                         }
                     }
                     .frame( alignment: .top)
-                    .frame(height: 100.0)
+//                    .frame(height: 100.0)
                     .navigationTitle("Bridge Scoring")
                 
-                NamesView().environmentObject(event)
+//                NamesView().environmentObject(event)
                 }
             }.environmentObject(event)
             
