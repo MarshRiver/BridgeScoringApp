@@ -17,36 +17,28 @@ struct TopView: View {
             
         }
         else {
-            NavigationView{
-                VStack(alignment: .center) {
-                    Form {
-                        Group{
+            VStack(alignment: .center) {
+                Form {
+                    Group{
                         TextField("Event: ", text: $event.eventName)
                             .padding()
                             .foregroundColor(.black)
                         DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
                             .padding()
-                        }
-                        .frame(height: 50.0)
                     }
-                    .frame(height: 200,alignment: .top)
-                    Form {
-                        Picker("Number of Pairs:",selection: $event.noPairs){
-                            ForEach(6...8,id:\.self){i in
-                                Text(String(i))
-                            }
+                    Picker("Number of Pairs:",selection: $event.noPairs){
+                        ForEach(6...8,id:\.self){i in
+                            Text(String(i))
                         }
-                        Text("Lets Play").onTapGesture {
-                            isSelected = true
-                        }
-                    }
-                    .frame( alignment: .top)
-//                    .frame(height: 100.0)
-                    .navigationTitle("Bridge Scoring")
-                
-//                NamesView().environmentObject(event)
+                    }.padding()
+                    
+                    Text("Select Players").onTapGesture {
+                        isSelected = true
+                    }.padding()
                 }
-            }.environmentObject(event)
+                .frame(width:400)
+            }
+            .environmentObject(event)
             
         }
     }

@@ -12,7 +12,6 @@ struct BridgeScoresApp: App {
     var body: some Scene {
         WindowGroup {
             TopView()
-//            ContentView()
         }
     }
 }

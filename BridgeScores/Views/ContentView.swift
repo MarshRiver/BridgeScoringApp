@@ -46,17 +46,17 @@ struct ContentView: View {
     @State var resultString = ""
     var body: some View {
         TabView {
+//            Text(String(match.noPairs)).tabItem {
+//                                Label("Match",systemImage: "star.fill")
+//                            }
             NamesView().tabItem {
-                Label("Names",systemImage: "star.fill")
+                Label("Players",systemImage: "star.fill")
             }
             
-//            Text(String(match.noPairs)).tabItem {
-//                                Label("Names",systemImage: "star.fill")
-//                            }
             if match.isLoaded{
             
-            VStack{
-                LegendRowView()
+                VStack{
+                    LegendRowView()
                     ScrollView {
                         ForEach(match.Boards,id:\.boardNo){ board in
                             if board.boardNo < match.Boards.count{
