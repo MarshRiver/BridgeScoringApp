@@ -13,8 +13,9 @@ struct TopView: View {
     var body: some View {
         if isSelected {
             
-            ContentView().environmentObject(event)
-            
+            ContentView()
+                .environmentObject(event)
+//                .environmentObject(MatchPointTable)
         }
         else {
             VStack(alignment: .center) {

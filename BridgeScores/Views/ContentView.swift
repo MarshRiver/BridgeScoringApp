@@ -42,6 +42,7 @@ struct LegendRowView:View{
 
 struct ContentView: View {
     @StateObject var match = Match()
+    @StateObject var matchPointRow = MatchPointRow()
     @EnvironmentObject var event: Event
     @State var resultString = ""
     var body: some View {
@@ -62,6 +63,7 @@ struct ContentView: View {
                             if board.boardNo < match.Boards.count{
                                 BoardView(boardNo: board.boardNo).padding()
                             }
+                            
                         }
                     }
                 }
@@ -69,6 +71,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(match)
+        .environmentObject(matchPointRow)
         .onAppear(){
             match.noPairs = event.noPairs
         }

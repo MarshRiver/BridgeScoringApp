@@ -8,14 +8,12 @@
 import Foundation
 
 
-class MatchPointTable {
-//    var match:Match = Match()
+class MatchPointRow: ObservableObject  {
+
     let minusInfinity = -Int.max
     var noPairs:Int = 6
-    var matchTable = [MatchPointRow]()
 
     init() {
-        matchTable = Array(repeating:MatchPointRow(),count:noPairs)
     }
 
     func fillMatchTable(match:Match,boardNo:Int) {
@@ -72,14 +70,19 @@ class MatchPointTable {
             MP[index] = 3.0 - Double(elem.rank) - (ties[index] - 1.0) * 0.5
             index += 1
         }
+        
+        //TODO
+        //Update appropriate board with masterpoints
+        //match.Boards[boardNo].contracts
+        
     }
 }
 
-struct MatchPointRow {
-    var pairNo:Int = 0
-    var pairMP:Int = 0
-    var pairNSScore: Int = kCFNumberNegativeInfinity as! Int
-    var tied: Int = 0
-    var rank: Int = 0
-}
 
+//struct MatchPointRow {
+//    var pairNo:Int = 0
+//    var pairMP:Int = 0
+//    var pairNSScore: Int = kCFNumberNegativeInfinity as! Int
+//    var tied: Int = 0
+//    var rank: Int = 0
+//}

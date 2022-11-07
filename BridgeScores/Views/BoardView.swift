@@ -28,6 +28,7 @@ struct BoardView: View {
     var boardNo:Int
     @EnvironmentObject var match: Match
     @EnvironmentObject var event: Event
+    @EnvironmentObject var matchPoint:MatchPointRow
     var body: some View {
         
         VStack{

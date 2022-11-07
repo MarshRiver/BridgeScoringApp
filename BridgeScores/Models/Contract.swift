@@ -23,21 +23,21 @@ struct Contract: Decodable,Identifiable {
     var down = ""
     var nsScore = ""
     var ewScore = ""
-    var ewMP:Double = 0
-    var nsMP:Double = 0
+    var ewMP:Double = 0.0
+    var nsMP:Double = 0.0
     
     
     mutating func setEWScore (score:String) {
         if score != ""{
             ewScore = String( -Int(score)!)
         }
-        print(self)
+//        print(self)
     }
     mutating func setNSScore (score:String) {
         if score != ""{
             nsScore = String( -Int(score)!)
         }
-        print(self)
+//        print(self)
     }
 
 
