@@ -66,15 +66,34 @@ class MatchPointRow: ObservableObject  {
         var MP = Array(repeating: 0.0 , count: board.count)
         index = 0
         for elem in rankingList {
-            
+            //TODO:
+            //3.0 should be a variable depending on #pairs
             MP[index] = 3.0 - Double(elem.rank) - (ties[index] - 1.0) * 0.5
             index += 1
         }
         
-        //TODO
+        //TODO:
         //Update appropriate board with masterpoints
         //match.Boards[boardNo].contracts
-        
+        for sortedIndex in 0..<MP.count {
+            
+            var pairIndex:Int?
+            var pairName = ""
+            pairName = rankingList[sortedIndex].name
+
+            index = 0
+            for elem in match.Boards[boardNo].contracts {
+                if elem.nsPair == pairName{
+                    pairIndex = index
+                }
+                index += 1
+            }
+            
+            match.Boards[0].contracts[pairIndex ?? 0].nsMP = MP[sortedIndex]
+            
+        }
+
+
     }
 }
 
