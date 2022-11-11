@@ -222,8 +222,8 @@
             filePath = "BridgeScores/Models/MPModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "fillMatchTable(match:boardNo:)"
             landmarkType = "7">
          </BreakpointContent>

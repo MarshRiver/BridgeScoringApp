@@ -72,7 +72,7 @@ class MatchPointRow: ObservableObject  {
             index += 1
         }
         
-        //TODO:
+        //TODO:assign ewMP = noPlayers - nsMP -1
         //Update appropriate board with masterpoints
         //match.Boards[boardNo].contracts
         for sortedIndex in 0..<MP.count {
@@ -89,19 +89,13 @@ class MatchPointRow: ObservableObject  {
                 index += 1
             }
             
-            match.Boards[0].contracts[pairIndex ?? 0].nsMP = MP[sortedIndex]
-            
+            //TODO: replace hardcoded 3 with variable for different 
+            match.Boards[boardNo].contracts[pairIndex ?? 0].nsMP = MP[sortedIndex]
+            match.Boards[boardNo].contracts[pairIndex ?? 0].ewMP =
+                3 - MP[sortedIndex] - 1
         }
 
 
     }
 }
 
-
-//struct MatchPointRow {
-//    var pairNo:Int = 0
-//    var pairMP:Int = 0
-//    var pairNSScore: Int = kCFNumberNegativeInfinity as! Int
-//    var tied: Int = 0
-//    var rank: Int = 0
-//}
