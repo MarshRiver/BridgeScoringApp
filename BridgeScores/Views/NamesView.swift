@@ -15,54 +15,63 @@ struct NamesRowView:View {
     @EnvironmentObject var matchPlayers:MatchPlayers
     
     var body: some View{
-        HStack(alignment: .center) {
+       HStack(alignment: .center) {
             Text(String(rowNo + 1))
                 .frame(width:30)
-//            Spacer()
-            Picker("First Name", selection: $playerIndex, content: {
+            //Picker for the first player of a pair
+            Picker("Player 1", selection: $playerIndex, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
                 }
-            }).padding(.trailing)
+            })
+            .padding(.trailing)
+           //Fill matchPlayers with the selected name
+            .onChange(of: playerIndex) {newValue in
+                matchPlayers.players[rowNo].playerOne.firstName = belfastPlayers.players[newValue].firstName
+                matchPlayers.players[rowNo].playerOne.lastName = belfastPlayers.players[newValue].lastName
+//                print(matchPlayers.players)
+
+            }
+            .onChange(of: playerIndex1){ newValue in
+                matchPlayers.players[rowNo].playerTwo.firstName = belfastPlayers.players[newValue].firstName
+                matchPlayers.players[rowNo].playerTwo.lastName = belfastPlayers.players[newValue].lastName
+//                print(matchPlayers.players)
+            }
+            
             Spacer()
-            Picker("Last Name", selection: $playerIndex1, content: {
+            //Picker for the second player of a pair
+            Picker("Player 2", selection: $playerIndex1, content: {
                 ForEach(0..<belfastPlayers.players.count,id:\.self)
                     { i in
                     Text(belfastPlayers.players[i].firstName + " " +
                          belfastPlayers.players[i].lastName)
                 }
             }).padding(.leading)
-//            Spacer()
+            Spacer()
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
 struct NamesView: View {
-//    @State var matchPlayers = MatchPlayers()
     @State var belfastPlayers = BelfastPlayers()
     @EnvironmentObject var event:Event
+    @EnvironmentObject var matchPlayers:MatchPlayers
 
     var body: some View {
         VStack(alignment:.leading) {
-            //Event grouping
-//            Form {
-//                Group{
-//                TextField("Event: ", text: //$event.eventName)
-//                    .padding()
-//                    .foregroundColor(.black)
-//                DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
-//                    .padding()
-//                }
-//                .frame(height: 50.0)
-//            }
-//            .frame(height: 200,alignment: .top)
+            HStack(alignment: .center){
+                Text("PairNo")
+                Text("Player One")
+                Text("Player Two")
+            }.frame(width: 600)
+     
             //Name picker
             VStack {
                 ForEach(0..<event.noPairs,id:\.self) { i in
-                    NamesRowView(rowNo: i).frame(width: 400, height: 48, alignment: .topLeading)
+                    NamesRowView(rowNo: i).frame(width: 600, height: 48, alignment: .topLeading).tag(i+1)
                 }
             }
         }

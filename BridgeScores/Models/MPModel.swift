@@ -89,6 +89,7 @@ class MatchPointRow: ObservableObject  {
                 index += 1
             }
             
+            //Fill match data structure with calculated Master Points
             //TODO: replace hardcoded 3 with variable for different 
             match.Boards[boardNo].contracts[pairIndex ?? 0].nsMP = MP[sortedIndex]
             match.Boards[boardNo].contracts[pairIndex ?? 0].ewMP =

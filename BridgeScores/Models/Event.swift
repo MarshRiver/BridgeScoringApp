@@ -13,11 +13,11 @@ class Event: ObservableObject {
     @Published var eventDate = Date()
     @Published var eventName = "Belfast"
 
-    @Published var matchPlayers:MatchPlayers
-    
-    init(){
-        matchPlayers = MatchPlayers()
-        matchPlayers.noPairs = 6
-    }
-    
+//    @Published var matchPlayers:MatchPlayers
+//    
+//    init(){
+//        matchPlayers = MatchPlayers()
+//        matchPlayers.noPairs = 6
+//    }
+//    
 }

@@ -43,13 +43,16 @@ struct LegendRowView:View{
 struct ContentView: View {
     @StateObject var match = Match()
     @StateObject var matchPointRow = MatchPointRow()
+    @StateObject var matchPlayers = MatchPlayers()
+    @StateObject var belfastPlayers = BelfastPlayers()
+    @StateObject var results = Results()
     @EnvironmentObject var event: Event
-    @State var resultString = ""
+//    var results:Results{
+//        Results(noPairs: event.noPairs)
+//
+//    }
     var body: some View {
         TabView {
-//            Text(String(match.noPairs)).tabItem {
-//                                Label("Match",systemImage: "star.fill")
-//                            }
             NamesView().tabItem {
                 Label("Players",systemImage: "star.fill")
             }
@@ -69,11 +72,17 @@ struct ContentView: View {
                 }
                 .tabItem{Label("Boards",systemImage:"star.fill")}
             }
+            ResultsView()
+                .tabItem{Label("Results",systemImage:"star.fill")}
         }
         .environmentObject(match)
         .environmentObject(matchPointRow)
+        .environmentObject(results)
+        .environmentObject(matchPlayers)
+        .environmentObject(belfastPlayers)
         .onAppear(){
             match.noPairs = event.noPairs
+//            results = Results(noPairs: event.noPairs)
         }
     }
 }

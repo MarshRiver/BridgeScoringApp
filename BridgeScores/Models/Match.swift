@@ -17,6 +17,7 @@ class Match: ObservableObject {
     @Published var isLoaded = false
     @Published var boardFileName = "Howell-6"
     @Published var Boards = [Board]()
+    
 
     required init() {
         
@@ -50,4 +51,17 @@ class Match: ObservableObject {
     }
     
 
+    func toteMasterPoints(matchResults: Results){
+        //for each board
+        self.Boards.forEach { board in
+            //for each contract
+            board.contracts.forEach { contract in
+                //test for EW Pair and NS Pair not null
+                if contract.nsPair != "" && contract.ewPair != ""   {
+                    matchResults.results[(Int(contract.nsPair) ?? 0) - 1].masterPoints += contract.nsMP
+                }
+            }
+        }
+        printResults(results: matchResults)
+    }
 }

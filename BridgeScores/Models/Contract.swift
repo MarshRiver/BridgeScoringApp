@@ -13,6 +13,7 @@ struct Board: Decodable,Identifiable {
     var contracts = [Contract]()
 }
 
+//TODO: add which pair got the contract
 struct Contract: Decodable,Identifiable {
     
     var id:Int

@@ -34,6 +34,7 @@ struct ContractRow: View {
                         $match.Boards[boardNo].contracts[rowNo].nsMP,
                               format:.number)
                     .font(.title2)
+                    .frame(width:100)
                     TextField("NSPair",text: $match.Boards[boardNo].contracts[rowNo].nsPair)
                         .font(.title2)
                         .frame(width:100)

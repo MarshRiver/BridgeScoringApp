@@ -15,7 +15,6 @@ struct TopView: View {
             
             ContentView()
                 .environmentObject(event)
-//                .environmentObject(MatchPointTable)
         }
         else {
             VStack(alignment: .center) {
