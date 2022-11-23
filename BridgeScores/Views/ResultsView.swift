@@ -15,6 +15,7 @@ struct ResultsView: View {
     @EnvironmentObject var matchPlayers: MatchPlayers
     
     var body: some View {
+      
         VStack{
             Text("Match Results").font(.title)
             
@@ -33,7 +34,7 @@ struct ResultsView: View {
                 HStack{
                     TextField("pairNo", value: $results.results[i].pairNo,formatter: NumberFormatter())
                     TextField("Players", text: $results.results[i].PlayerNames)
-                    TextField("Score", value: $results.results[i].masterPoints, formatter: NumberFormatter())
+                    TextField("Score", value: $results.results[i].masterPoints, formatter: matchPoints.mpFormatter)
                     TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter())
                 }.frame(width:800,alignment: .center)
             }

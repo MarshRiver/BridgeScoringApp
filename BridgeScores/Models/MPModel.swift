@@ -12,8 +12,10 @@ class MatchPointRow: ObservableObject  {
 
     let minusInfinity = -Int.max
     var noPairs:Int = 6
-
+    let mpFormatter = NumberFormatter()
+ 
     init() {
+        mpFormatter.numberStyle = .decimal
     }
 
     func fillMatchTable(match:Match,boardNo:Int) {

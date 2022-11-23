@@ -65,6 +65,7 @@ class Match: ObservableObject {
                 //test for EW Pair and NS Pair not null
                 if contract.nsPair != "" && contract.ewPair != ""   {
                     matchResults.results[(Int(contract.nsPair) ?? 0) - 1].masterPoints += contract.nsMP
+                    matchResults.results[(Int(contract.ewPair) ?? 0) - 1].masterPoints += contract.ewMP
                 }
             }
         }
