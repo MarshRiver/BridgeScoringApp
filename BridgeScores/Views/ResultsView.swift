@@ -23,21 +23,22 @@ struct ResultsView: View {
                 Spacer()
                 Text("Players")
                 Spacer()
-                Text("Percentage")
-                Spacer()
                 Text("Score")
+                Spacer()
+                Text("Percentage")
 
             }.frame(width:800,alignment: .topLeading)
 
             ForEach(0..<event.noPairs,id: \.self){ i in
                 HStack{
-                    TextField("pairNo",text: $match.Boards[0].contracts[1].nsPair)
-                    TextField("Percentage", text: $results.results[i].PlayerNames)
+                    TextField("pairNo", value: $results.results[i].pairNo,formatter: NumberFormatter())
+                    TextField("Players", text: $results.results[i].PlayerNames)
                     TextField("Score", value: $results.results[i].masterPoints, formatter: NumberFormatter())
-                }
+                    TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter())
+                }.frame(width:800,alignment: .center)
             }
             
-        }.frame(width: 800)
+        }
         .onAppear(){
             results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
             match.toteMasterPoints(matchResults: results)

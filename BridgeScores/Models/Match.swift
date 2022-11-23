@@ -29,8 +29,9 @@ class Match: ObservableObject {
 
         isLoaded = false
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: fileName, withExtension: "json")
-        
+//        let jsonUrl = Bundle.main.url(forResource: fileName, withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: "Howell-6-25Bluedebug", withExtension: "json")
+
         do {
             // Read the file into a data object
             let jsonData = try Data(contentsOf: jsonUrl!)
@@ -52,6 +53,11 @@ class Match: ObservableObject {
     
 
     func toteMasterPoints(matchResults: Results){
+        //Inititalize resultRows
+        for i in 0..<matchResults.results.count {
+            matchResults.results[i].masterPoints = 0.0
+        }
+        
         //for each board
         self.Boards.forEach { board in
             //for each contract
