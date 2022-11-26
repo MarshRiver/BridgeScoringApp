@@ -11,13 +11,15 @@ class Event: ObservableObject {
     @Published var noPairs = 6
     @Published var eventFileName = "Howell-6"
     @Published var eventDate = Date()
-    @Published var eventName = "Belfast"
+    @Published var eventName = "Belfast Afternoon"
+    let eventDateFormatter = DateFormatter()
+    
 
-//    @Published var matchPlayers:MatchPlayers
-//    
-//    init(){
-//        matchPlayers = MatchPlayers()
-//        matchPlayers.noPairs = 6
-//    }
-//    
+    init(){
+        eventDateFormatter.dateFormat = "MM/dd/YYYY"
+    }
+    
+    func stringDate() -> String {
+        return eventDateFormatter.string(from: eventDate)
+    }
 }

@@ -17,12 +17,24 @@ struct ResultsView: View {
     var body: some View {
       
         VStack{
-            Text("Match Results").font(.title)
-            
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(.cyan)
+                    .opacity(0.4)
+                    .frame(width: 800,height: 40)
+                    .shadow(radius: 15.0,x:-5,y:10)
+                HStack{
+                    Text(event.eventName).font(.title)
+                    Text("  ")
+                    Text(event.stringDate())
+                }
+            }
             HStack{
-                Text("pairNo")
+                Text("Pair Number")
                 Spacer()
                 Text("Players")
+                Spacer()
+                Text("Rank")
                 Spacer()
                 Text("Score")
                 Spacer()
@@ -30,20 +42,30 @@ struct ResultsView: View {
 
             }.frame(width:800,alignment: .topLeading)
 
+            
             ForEach(0..<event.noPairs,id: \.self){ i in
                 HStack{
-                    TextField("pairNo", value: $results.results[i].pairNo,formatter: NumberFormatter())
-                    TextField("Players", text: $results.results[i].PlayerNames)
-                    TextField("Score", value: $results.results[i].masterPoints, formatter: matchPoints.mpFormatter)
-                    TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter())
-                }.frame(width:800,alignment: .center)
+                    TextField("Pair Number", value: $results.results[i].pairNo,formatter: NumberFormatter())
+                        .frame(width:80)
+                    Spacer()
+                    TextField("Players", text: $results.results[i].PlayerNames).frame(width:200)
+                    Spacer()
+                    Text(String(i+1)).frame(width:80)
+                    Spacer()
+                    TextField("Score", value: $results.results[i].masterPoints, formatter: matchPoints.mpFormatter).frame(width: 80)
+                    Spacer()
+                    TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter()).frame(width:80)
+                 }.frame(width:800,alignment: .center)
             }
             
         }
         .onAppear(){
             results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
             match.toteMasterPoints(matchResults: results)
+            results.results.sort()
         }
+        .padding()
+        .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
 
             
     }
@@ -56,5 +78,6 @@ struct ResultsView_Previews: PreviewProvider {
             .environmentObject(Match())
             .environmentObject(MatchPlayers())
             .environmentObject(Results())
+            .environmentObject(MatchPointRow())
     }
 }

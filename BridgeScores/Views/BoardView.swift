@@ -14,9 +14,16 @@ struct CaptionView: View{
     var body: some View{
         HStack {
             if boardNo < match.Boards.count {
-                Text("Board " + String(match.Boards[boardNo].boardNo + 1))
-                    .font(.title)
-                .padding()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(.cyan)
+                        .opacity(0.3)
+                        .frame(width: 800,height: 40)
+                        .shadow(radius: 15.0,x:-5,y:10)
+                    Text("Board " + String(match.Boards[boardNo].boardNo + 1))
+                        .font(.title)
+                        .padding()
+                }
             }
 
         }
@@ -31,17 +38,21 @@ struct BoardView: View {
     @EnvironmentObject var matchPoint:MatchPointRow
     var body: some View {
         
-        VStack{
-            CaptionView(boardNo: boardNo)
-
-            ForEach(0..<event.noPairs,id:\.self){ i in
-                if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
-                    ContractRow(rowNo:i,boardNo: boardNo)
+        ZStack{
+//            RoundedRectangle(cornerRadius: 15).fill(.cyan).opacity(0.3)
+            VStack{
+                CaptionView(boardNo: boardNo)
+                ForEach(0..<event.noPairs,id:\.self){ i in
+                    if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
+                        ContractRow(rowNo:i,boardNo: boardNo)
+                    }
                 }
             }
+            .padding()
+            
+            .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
         }
-        .padding(.bottom)
-        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+        .padding()
     }
     
 
@@ -52,6 +63,7 @@ struct BoardView_Previews: PreviewProvider {
         BoardView(boardNo: 0)
             .environmentObject(Match())
             .environmentObject(Event())
+            .environmentObject(MatchPointRow())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

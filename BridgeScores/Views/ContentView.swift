@@ -13,30 +13,31 @@ struct LegendRowView:View{
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .fill(.cyan)
-                .frame(height: 40)
+                .opacity(0.3)
+                .frame(width: 800,height: 40)
                 .shadow(radius: 15.0,x:-5,y:10)
             HStack{
                 TextBox(s: "MP")
-                    .frame(width:50)
+                    .frame(width:80)
                 TextBox(s: "NS")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "Bid")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "Made")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "Down")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "NSScore")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "EWScore")
-                    .frame(width:100)
+                    .frame(width:80)
                 TextBox(s: "EW")
                     .frame(width:50)
                 TextBox(s: "MP")
             }
-            .background(.cyan)
+//            .background(.cyan)
         .padding()
-        }
+        }.frame(width:800)
     }
 }
 
@@ -64,7 +65,7 @@ struct ContentView: View {
                     ScrollView {
                         ForEach(match.Boards,id:\.boardNo){ board in
                             if board.boardNo < match.Boards.count{
-                                BoardView(boardNo: board.boardNo).padding()
+                                BoardView(boardNo: board.boardNo)
                             }
                             
                         }

@@ -44,7 +44,12 @@ class Results: ObservableObject{
 
 }
 
-struct ResultsRow {
+//struct ResultsRow {
+    struct ResultsRow: Comparable {
+        static func < (lhs: ResultsRow, rhs: ResultsRow) -> Bool {
+            return lhs.masterPoints > rhs.masterPoints + 0.01
+        }
+        
     var pairNo = 0
     var PlayerNames = "Joe & Judy"
     var masterPoints = 0.0

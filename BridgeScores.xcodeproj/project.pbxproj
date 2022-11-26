@@ -13,6 +13,7 @@
 		F37813B7280C6C1A00659634 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37813B6280C6C1A00659634 /* BoardView.swift */; };
 		F3793ED3292DB0C5003CA1B3 /* Howell-6-25Bluedebug.json in Resources */ = {isa = PBXBuildFile; fileRef = F3793ED2292DB0C5003CA1B3 /* Howell-6-25Bluedebug.json */; };
 		F379B50128138B5B00F711BB /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379B50028138B5B00F711BB /* Players.swift */; };
+		F38C832A2931228900F46E39 /* BelfastNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F38C83292931228900F46E39 /* BelfastNames.json */; };
 		F3ACBD06281833D700510F82 /* Howell-8.json in Resources */ = {isa = PBXBuildFile; fileRef = F3ACBD05281833D700510F82 /* Howell-8.json */; };
 		F3AE8BD72814B75000BDAC73 /* Names.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE8BD62814B75000BDAC73 /* Names.json */; };
 		F3B942452816FAF900D045DB /* Howell-7.json in Resources */ = {isa = PBXBuildFile; fileRef = F3B942442816FAF900D045DB /* Howell-7.json */; };
@@ -36,6 +37,7 @@
 		F37813B6280C6C1A00659634 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		F3793ED2292DB0C5003CA1B3 /* Howell-6-25Bluedebug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Howell-6-25Bluedebug.json"; sourceTree = "<group>"; };
 		F379B50028138B5B00F711BB /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		F38C83292931228900F46E39 /* BelfastNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BelfastNames.json; sourceTree = "<group>"; };
 		F3ACBD05281833D700510F82 /* Howell-8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-8.json"; sourceTree = "<group>"; };
 		F3AE8BD62814B75000BDAC73 /* Names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Names.json; sourceTree = "<group>"; };
 		F3B942442816FAF900D045DB /* Howell-7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-7.json"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				F3B942442816FAF900D045DB /* Howell-7.json */,
 				F3ACBD05281833D700510F82 /* Howell-8.json */,
 				F3AE8BD62814B75000BDAC73 /* Names.json */,
+				F38C83292931228900F46E39 /* BelfastNames.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				F3E830A1280B395400CDA2A9 /* Preview Assets.xcassets in Resources */,
 				F3793ED3292DB0C5003CA1B3 /* Howell-6-25Bluedebug.json in Resources */,
 				F3AE8BD72814B75000BDAC73 /* Names.json in Resources */,
+				F38C832A2931228900F46E39 /* BelfastNames.json in Resources */,
 				F3E8309E280B395400CDA2A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

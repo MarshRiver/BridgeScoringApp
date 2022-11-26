@@ -62,21 +62,30 @@ struct NamesView: View {
 
     var body: some View {
         VStack(alignment:.leading) {
-            HStack(alignment: .center){
-                Text("PairNo")
-                Text("Player One")
-                Text("Player Two")
-            }.frame(width: 600)
-     
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(.cyan)
+                    .opacity(0.4)
+                    .frame(height: 40)
+                    .shadow(radius: 15.0,x:-5,y:10)
+                HStack(alignment: .center){
+                    Text("PairNo").frame(width:80)
+                    
+                    Text("Player One")
+                    Spacer()
+                    Text("Player Two")
+                    Spacer()
+                }
+            }.frame(width: 800)
             //Name picker
             VStack {
                 ForEach(0..<event.noPairs,id:\.self) { i in
-                    NamesRowView(rowNo: i).frame(width: 600, height: 48, alignment: .topLeading).tag(i+1)
+                    NamesRowView(rowNo: i)//.frame(width: 800, height: 48, alignment: .topLeading).tag(i+1)
                 }
-            }
+            }.padding().frame(width:800)
+            .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
         }
         .environmentObject(belfastPlayers)
-        .padding()
     }
 }
 

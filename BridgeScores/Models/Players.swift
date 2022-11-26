@@ -12,7 +12,7 @@ class BelfastPlayers:ObservableObject {
     
     init(){
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: "Names", withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: "BelfastNames", withExtension: "json")
 
         do {
             // Read the file into a data object

@@ -33,44 +33,48 @@ struct ContractRow: View {
                     TextField("NSMP",value:
                         $match.Boards[boardNo].contracts[rowNo].nsMP,
                               format:.number)
-                    .font(.title2)
-                    .frame(width:100)
+                        .font(.title2)
+                        .frame(width:80)
                     TextField("NSPair",text: $match.Boards[boardNo].contracts[rowNo].nsPair)
                         .font(.title2)
-                        .frame(width:100)
+                        .frame(width:80)
                     TextField("Bid",text: $match.Boards[boardNo].contracts[rowNo].bid)
                         .font(.title2)
-                        .frame(width:100)
+                        .frame(width:80)
                     TextField("Made",text: $match.Boards[boardNo].contracts[rowNo].made)
                         .font(.title2)
-                        .frame(width:100)
+                        .frame(width:80)
                     TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
                         .font(.title2)
-                        .frame(width:100)
+                        .frame(width:80)
                     TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
                         .font(.title2)
-                        .keyboardType(.default)
-                        .frame(width:100)
+                        .keyboardType(.numberPad)
+                        .frame(width:80)
+                        .autocorrectionDisabled(true)
+                        .disableAutocorrection(true)
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
                             matchPoint.fillMatchTable(match: match, boardNo: boardNo)
                         }
                     TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
                         .font(.title2)
-                        .keyboardType(.default)
-                        .frame(width:100)
+                        .keyboardType(.numberPad)
+                        .frame(width:80)
+                        .autocorrectionDisabled(true)
+                        .disableAutocorrection(true)
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
                             matchPoint.fillMatchTable(match: match, boardNo: boardNo)
                         }
                     TextField("EWPair",text: $match.Boards[boardNo].contracts[rowNo].ewPair)
-                        .frame(width:100)
+                        .frame(width:80)
                         .font(.title2)
                     TextField("EWMP",value:
                         $match.Boards[boardNo].contracts[rowNo].ewMP,
                               format:.number)
-                    .frame(width:100)
-                    .font(.title2)
+                        .frame(width:80)
+                        .font(.title2)
                 }
             }
         }
@@ -84,6 +88,6 @@ struct ContractRow_Previews: PreviewProvider {
     static var previews: some View {
         ContractRow(rowNo: 0,boardNo: 0)
             .environmentObject(Match())
-            .previewInterfaceOrientation(.landscapeLeft)
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
