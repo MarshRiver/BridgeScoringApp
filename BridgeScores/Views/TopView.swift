@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+//let MovementPicker = Picker("Movement")
+
+
 struct TopView: View {
     @State var isSelected = false
     @StateObject var event = Event()
@@ -22,11 +25,19 @@ struct TopView: View {
                     Group{
                         TextField("Event: ", text: $event.eventName)
                         DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
-                        Picker("Number of Pairs:",selection: $event.noPairs){
-                            ForEach(6...8,id:\.self){i in
-                                Text(String(i))
+                        //Movement Picker
+                        Picker("Movement",selection: $event.eventMovementName){
+                            ForEach(event.Movements,id:\.self){
+                                Text($0)
+//                            ForEach(0..<event.Movements.count,id:\.self){ i in
+//                                Text(event.Movements[i]).tag(i)
                             }
                         }
+//                        Picker("Number of Pairs:",selection: $event.noPairs){
+//                            ForEach(6...8,id:\.self){i in
+//                                Text(String(i))
+//                            }
+//                        }
                         Text("Select Players").onTapGesture {
                             isSelected = true
                         }

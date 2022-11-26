@@ -8,6 +8,7 @@
 import Foundation
 
 class Match: ObservableObject {
+
     @Published var noPairs = 6 {
         willSet{
             boardFileName = "Howell-" + String(newValue)
