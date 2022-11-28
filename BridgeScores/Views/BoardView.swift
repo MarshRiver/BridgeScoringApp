@@ -40,6 +40,7 @@ struct BoardView: View {
         
         ZStack{
 //            RoundedRectangle(cornerRadius: 15).fill(.cyan).opacity(0.3)
+//                .frame(width:800,height:480)
             VStack{
                 CaptionView(boardNo: boardNo)
                 ForEach(0..<event.noPairs,id:\.self){ i in
@@ -61,9 +62,9 @@ struct BoardView: View {
 struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         BoardView(boardNo: 0)
-            .environmentObject(Match())
+            .environmentObject(Match(event:Event()))
             .environmentObject(Event())
             .environmentObject(MatchPointRow())
-            .previewInterfaceOrientation(.landscapeLeft)
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }

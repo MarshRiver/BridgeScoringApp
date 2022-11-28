@@ -12,7 +12,9 @@ import SwiftUI
 
 struct TopView: View {
     @State var isSelected = false
+    @State var movementIndex = 0
     @StateObject var event = Event()
+    
     var body: some View {
         if isSelected {
             
@@ -26,18 +28,16 @@ struct TopView: View {
                         TextField("Event: ", text: $event.eventName)
                         DatePicker("Date:", selection: $event.eventDate, displayedComponents: .date)
                         //Movement Picker
-                        Picker("Movement",selection: $event.eventMovementName){
-                            ForEach(event.Movements,id:\.self){
-                                Text($0)
-//                            ForEach(0..<event.Movements.count,id:\.self){ i in
-//                                Text(event.Movements[i]).tag(i)
+                        Picker("Movements",selection: $movementIndex){
+                            ForEach(0..<event.Movements.count,id:\.self){ i in
+                                Text(event.Movements[i].name)
                             }
                         }
-//                        Picker("Number of Pairs:",selection: $event.noPairs){
-//                            ForEach(6...8,id:\.self){i in
-//                                Text(String(i))
-//                            }
-//                        }
+                        .onChange(of: movementIndex) { newValue in
+                            event.eventMovementName = event.Movements[newValue].name
+                            event.noPairs = event.Movements[newValue].noPairs
+//                            print(event.Movements[newValue].name)
+                        }
                         Text("Select Players").onTapGesture {
                             isSelected = true
                         }
@@ -46,16 +46,23 @@ struct TopView: View {
                     
                 }
                 .frame(width:400,height:400)
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                .border(.cyan, width: 4)
             }
             .environmentObject(event)
             
         }
     }
 }
+
 struct TopView_Previews: PreviewProvider {
     static var previews: some View {
         TopView()
             .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
+
+
+//                            ForEach(event.Movements,id:\.self){
+//                                Text($0)
+//                            ForEach(0..<event.Movements.count,id:\.self){ i in
+//                                Text(event.Movements[i]).tag(i)

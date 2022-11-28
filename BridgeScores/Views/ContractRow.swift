@@ -87,7 +87,7 @@ struct ContractRow: View {
 struct ContractRow_Previews: PreviewProvider {
     static var previews: some View {
         ContractRow(rowNo: 0,boardNo: 0)
-            .environmentObject(Match())
+            .environmentObject(Match(event:Event()))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

@@ -19,7 +19,7 @@ class MatchPointRow: ObservableObject  {
     }
 
     func fillMatchTable(match:Match,boardNo:Int) {
-        self.noPairs = match.noPairs
+//        self.noPairs = match.noPairs
         
         //Assign current board contracts to our board array
         var board = match.Boards[boardNo].contracts

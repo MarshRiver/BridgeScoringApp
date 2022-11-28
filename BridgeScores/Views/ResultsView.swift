@@ -75,9 +75,9 @@ struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ResultsView()
             .environmentObject(Event())
-            .environmentObject(Match())
-            .environmentObject(MatchPlayers())
-            .environmentObject(Results())
+            .environmentObject(Match(event:Event()))
+            .environmentObject(MatchPlayers(noPairs:6))
+            .environmentObject(Results(noPairs: 6))
             .environmentObject(MatchPointRow())
     }
 }

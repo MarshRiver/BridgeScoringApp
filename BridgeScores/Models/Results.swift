@@ -12,13 +12,12 @@ class Results: ObservableObject{
     @Published var results = [ResultsRow]()
     var rowCount = 0
     
-    init(){
-        for index in 0..<6 {
-            results.append(ResultsRow(pairNo:index + 1))
-//            results[index].PlayerNames = String(matchPlayers.players[
-        }
-    }
-    
+//    init(){
+//        for index in 0..<6 {
+//            results.append(ResultsRow(pairNo:index + 1))
+//        }
+//    }
+//    
     init(noPairs:Int!){
         rowCount = noPairs
         for index in 0..<noPairs {

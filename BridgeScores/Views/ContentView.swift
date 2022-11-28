@@ -42,16 +42,20 @@ struct LegendRowView:View{
 }
 
 struct ContentView: View {
-    @StateObject var match = Match()
+    @StateObject var match = Match(event: Event())
     @StateObject var matchPointRow = MatchPointRow()
-    @StateObject var matchPlayers = MatchPlayers()
     @StateObject var belfastPlayers = BelfastPlayers()
-    @StateObject var results = Results()
+//    @StateObject var results = Results(noPairs:event.noPairs)
     @EnvironmentObject var event: Event
-//    var results:Results{
-//        Results(noPairs: event.noPairs)
-//
-//    }
+    var results:Results{
+        Results(noPairs: event.noPairs)
+
+    }
+//    @StateObject var matchPlayers = MatchPlayers()
+    var matchPlayers:MatchPlayers{
+        MatchPlayers(noPairs:event.noPairs)
+    }
+    
     var body: some View {
         TabView {
             NamesView().tabItem {
@@ -62,14 +66,16 @@ struct ContentView: View {
             
                 VStack{
                     LegendRowView()
-                    ScrollView {
-                        ForEach(match.Boards,id:\.boardNo){ board in
-                            if board.boardNo < match.Boards.count{
-                                BoardView(boardNo: board.boardNo)
-                            }
-                            
-                        }
-                    }
+                    MatchView()
+//                    ScrollView {
+//                        ForEach(match.Boards,id:\.boardNo){ board in
+//                            if board.boardNo < match.Boards.count{
+//                                BoardView(boardNo: board.boardNo)
+//                            }
+//
+//                        }
+//                    }
+                    
                 }
                 .tabItem{Label("Boards",systemImage:"star.fill")}
             }
@@ -81,10 +87,10 @@ struct ContentView: View {
         .environmentObject(results)
         .environmentObject(matchPlayers)
         .environmentObject(belfastPlayers)
-        .onAppear(){
-            match.noPairs = event.noPairs
+//        .onAppear(){
+//            match.noPairs = event.noPairs
 //            results = Results(noPairs: event.noPairs)
-        }
+//        }
     }
 }
 

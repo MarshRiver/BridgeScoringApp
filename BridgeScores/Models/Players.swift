@@ -27,7 +27,7 @@ class BelfastPlayers:ObservableObject {
         }
         catch {
             // TODO log error
-            print("Couldn't parse local data")
+            print("Couldn't parse local data in Players.swift")
         }
 
     }
@@ -35,10 +35,10 @@ class BelfastPlayers:ObservableObject {
 
 
 class MatchPlayers: ObservableObject {
-    var noPairs:Int = 6
+//    var noPairs:Int!
     @Published var players = [Pair]()
     
-    init(){
+    init(noPairs:Int!){
         for i in 0 ..< noPairs {
             players.append(Pair())
             players[i].pairNo = i + 1

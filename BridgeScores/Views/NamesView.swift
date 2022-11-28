@@ -34,11 +34,6 @@ struct NamesRowView:View {
 //                print(matchPlayers.players)
 
             }
-            .onChange(of: playerIndex1){ newValue in
-                matchPlayers.players[rowNo].playerTwo.firstName = belfastPlayers.players[newValue].firstName
-                matchPlayers.players[rowNo].playerTwo.lastName = belfastPlayers.players[newValue].lastName
-//                print(matchPlayers.players)
-            }
             
             Spacer()
             //Picker for the second player of a pair
@@ -49,6 +44,11 @@ struct NamesRowView:View {
                          belfastPlayers.players[i].lastName)
                 }
             }).padding(.leading)
+               .onChange(of: playerIndex1){ newValue in
+                   matchPlayers.players[rowNo].playerTwo.firstName = belfastPlayers.players[newValue].firstName
+                   matchPlayers.players[rowNo].playerTwo.lastName = belfastPlayers.players[newValue].lastName
+   //                print(matchPlayers.players)
+               }
             Spacer()
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
