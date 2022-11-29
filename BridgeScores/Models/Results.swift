@@ -22,13 +22,12 @@ class Results: ObservableObject{
         rowCount = noPairs
         for index in 0..<noPairs {
             results.append(ResultsRow(pairNo:index + 1))
-//            results[index].PlayerNames = String(index)
         }
     }
     
-    func fillResults(){
-        
-    }
+//    func fillResults(){
+//
+//    }
     
     func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
         

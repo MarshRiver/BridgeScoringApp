@@ -59,6 +59,6 @@ class Match: ObservableObject {
                 }
             }
         }
-        printResults(results: matchResults)
+//        printResults(results: matchResults)
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MatchView: View {
     @EnvironmentObject var match:Match
+    @EnvironmentObject var event:Event
     var body: some View {
         ScrollView {
             ForEach(match.Boards,id:\.boardNo){ board in
@@ -19,6 +20,7 @@ struct MatchView: View {
             }
         }
         .environmentObject(match)
+        .environmentObject(event)
 
     }
 }
@@ -27,6 +29,7 @@ struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
         MatchView()
             .environmentObject(Match(event: Event()))
+            .environmentObject(Event())
             .previewInterfaceOrientation(.landscapeRight)
 
     }

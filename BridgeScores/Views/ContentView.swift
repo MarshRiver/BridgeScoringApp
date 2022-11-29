@@ -67,15 +67,6 @@ struct ContentView: View {
                 VStack{
                     LegendRowView()
                     MatchView()
-//                    ScrollView {
-//                        ForEach(match.Boards,id:\.boardNo){ board in
-//                            if board.boardNo < match.Boards.count{
-//                                BoardView(boardNo: board.boardNo)
-//                            }
-//
-//                        }
-//                    }
-                    
                 }
                 .tabItem{Label("Boards",systemImage:"star.fill")}
             }
@@ -87,10 +78,12 @@ struct ContentView: View {
         .environmentObject(results)
         .environmentObject(matchPlayers)
         .environmentObject(belfastPlayers)
-//        .onAppear(){
-//            match.noPairs = event.noPairs
+        .onAppear(){
+//            print(event.eventMovementName)
+            match.getLocalData(fileName: event.eventMovementName)
+//            $match.noPairs = event.noPairs
 //            results = Results(noPairs: event.noPairs)
-//        }
+        }
     }
 }
 

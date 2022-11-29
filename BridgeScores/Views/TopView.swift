@@ -45,7 +45,7 @@ struct TopView: View {
                     .padding()
                     
                 }
-                .frame(width:400,height:400)
+                .frame(width:600,height:400)
                 .border(.cyan, width: 4)
             }
             .environmentObject(event)
