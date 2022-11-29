@@ -49,7 +49,7 @@ struct ContractRow: View {
                         .frame(width:80)
                     TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
                         .font(.title2)
-                        .keyboardType(.numberPad)
+                        //.keyboardType(.numberPad)
                         .frame(width:80)
                         .autocorrectionDisabled(true)
                         .disableAutocorrection(true)
@@ -59,7 +59,7 @@ struct ContractRow: View {
                         }
                     TextField("EWScore",text: $match.Boards[boardNo].contracts[rowNo].ewScore)
                         .font(.title2)
-                        .keyboardType(.numberPad)
+                        //.keyboardType(.numberPad)
                         .frame(width:80)
                         .autocorrectionDisabled(true)
                         .disableAutocorrection(true)

@@ -12,7 +12,8 @@ import SwiftUI
 
 struct TopView: View {
     @State var isSelected = false
-    @State var movementIndex = 0
+    //Select debug movemen
+    @State var movementIndex = 3
     @StateObject var event = Event()
     
     var body: some View {
@@ -45,7 +46,7 @@ struct TopView: View {
                     .padding()
                     
                 }
-                .frame(width:600,height:400)
+                .frame(width:800,height:400)
                 .border(.cyan, width: 4)
             }
             .environmentObject(event)
@@ -57,7 +58,7 @@ struct TopView: View {
 struct TopView_Previews: PreviewProvider {
     static var previews: some View {
         TopView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
 
