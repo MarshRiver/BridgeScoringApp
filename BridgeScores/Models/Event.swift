@@ -39,7 +39,7 @@ class Event: ObservableObject {
         }
         catch {
             // TODO log error
-            print("Couldn't parse local data")
+            print("Couldn't parse local data: Event.swift")
 
         }
 //        eventMovementName = Movements[0].name

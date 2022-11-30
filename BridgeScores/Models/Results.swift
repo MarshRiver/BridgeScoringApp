@@ -33,13 +33,13 @@ class Results: ObservableObject{
         
         for i  in 0..<matchResults.results.count {
             matchResults.results[i].PlayerNames =
-            matchPlayers.players[i].playerOne.firstName
-            + " & " + matchPlayers.players[i].playerTwo.firstName
+                matchPlayers.players[i].playerOne.firstName
+                + " & " + matchPlayers.players[i].playerTwo.firstName
         }
         
         
     }
-
+    
 }
 
 //struct ResultsRow {

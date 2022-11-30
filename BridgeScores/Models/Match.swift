@@ -36,7 +36,7 @@ class Match: ObservableObject {
         }
         catch {
             // TODO log error
-            print("Couldn't parse local data")
+            print("Couldn't parse local data: match.swift")
         }
         isLoaded = true
     }

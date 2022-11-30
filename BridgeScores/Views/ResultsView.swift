@@ -62,7 +62,7 @@ struct ResultsView: View {
         .onAppear(){
             results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
             match.toteMasterPoints(matchResults: results)
-            results.results.sort()
+//            results.results.sort()
         }
         .padding()
         .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
@@ -79,5 +79,6 @@ struct ResultsView_Previews: PreviewProvider {
             .environmentObject(MatchPlayers(noPairs:6))
             .environmentObject(Results(noPairs: 6))
             .environmentObject(MatchPointRow())
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
