@@ -26,7 +26,6 @@ class Event: ObservableObject {
     @Published var eventMovementName = "Howell-6"
     @Published var eventDate = Date()
     @Published var eventName = "Belfast Afternoon"
-//    @Published var Movements = Array(repeating:Movement(),count:4)
     @Published var Movements = [Movement()]
     let eventDateFormatter = DateFormatter()
     
@@ -48,6 +47,7 @@ class Event: ObservableObject {
     }
     
     func stringDate() -> String {
+        eventDateFormatter.dateStyle = .full
         return eventDateFormatter.string(from: eventDate)
     }
     
