@@ -42,23 +42,4 @@ class Match: ObservableObject {
     }
     
 
-    func toteMasterPoints(matchResults: Results){
-        //Inititalize resultRows
-        for i in 0..<matchResults.results.count {
-            matchResults.results[i].masterPoints = 0.0
-        }
-        
-        //for each board
-        self.Boards.forEach { board in
-            //for each contract
-            board.contracts.forEach { contract in
-                //test for EW Pair and NS Pair not null
-                if contract.nsPair != "" && contract.ewPair != ""   {
-                    matchResults.results[(Int(contract.nsPair) ?? 0) - 1].masterPoints += contract.nsMP
-                    matchResults.results[(Int(contract.ewPair) ?? 0) - 1].masterPoints += contract.ewMP
-                }
-            }
-        }
-//        printResults(results: matchResults)
-    }
 }

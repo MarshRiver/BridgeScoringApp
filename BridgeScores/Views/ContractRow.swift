@@ -66,6 +66,8 @@ struct ContractRow: View {
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
                             matchPoint.fillMatchTable(match: match, boardNo: boardNo)
+//                            print("from contract row")
+//                            print(match.Boards[0])
                         }
                     TextField("EWPair",text: $match.Boards[boardNo].contracts[rowNo].ewPair)
                         .frame(width:80)

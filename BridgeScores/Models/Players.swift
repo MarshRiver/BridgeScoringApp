@@ -38,8 +38,9 @@ class MatchPlayers: ObservableObject {
 //    var noPairs:Int!
     @Published var players = [Pair]()
     
-    init(noPairs:Int!){
-        for i in 0 ..< noPairs {
+//    init(noPairs:Int!){
+    init(event:Event){
+        for i in 0 ..< event.noPairs {
             players.append(Pair())
             players[i].pairNo = i + 1
         }

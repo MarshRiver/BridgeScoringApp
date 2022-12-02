@@ -33,13 +33,17 @@ struct TopView: View {
                             ForEach(0..<event.Movements.count,id:\.self){ i in
                                 Text(event.Movements[i].name)
                             }
+                        }.onAppear(){
+                            event.eventMovementName = event.Movements[movementIndex].name
                         }
                         .onChange(of: movementIndex) { newValue in
                             event.eventMovementName = event.Movements[newValue].name
                             event.noPairs = event.Movements[newValue].noPairs
 //                            print(event.Movements[newValue].name)
                         }
-                        Text("Select Players").onTapGesture {
+                        Text("Select Players and Play")
+                            .font(.title)
+                            .onTapGesture {
                             isSelected = true
                         }
                     }
@@ -61,9 +65,3 @@ struct TopView_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
-
-
-//                            ForEach(event.Movements,id:\.self){
-//                                Text($0)
-//                            ForEach(0..<event.Movements.count,id:\.self){ i in
-//                                Text(event.Movements[i]).tag(i)

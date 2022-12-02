@@ -51,9 +51,6 @@ struct NamesRowView: View {
                 }
                 Spacer()
         }
-//        .background(Color.cyan).opacity(0.2)
-//        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-//        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
         }
     }
 
@@ -63,8 +60,7 @@ struct NamesRowView: View {
 struct NamesRowView_Previews: PreviewProvider {
     static var previews: some View {
         NamesRowView(rowNo: 0)
-            .environmentObject(MatchPlayers(noPairs: 6))
-//            .environmentObject(belfastPlayers)
+            .environmentObject(MatchPlayers(event:Event()))
 
     }
 }

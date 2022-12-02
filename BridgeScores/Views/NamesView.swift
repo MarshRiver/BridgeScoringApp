@@ -11,7 +11,7 @@ import SwiftUI
 struct NamesView: View {
 //    @State var belfastPlayers = BelfastPlayers()
     @EnvironmentObject var event:Event
-    @EnvironmentObject var matchPlayers:MatchPlayers
+//    @EnvironmentObject var matchPlayers:MatchPlayers
 
     var body: some View {
         VStack(alignment:.leading) {
@@ -36,13 +36,10 @@ struct NamesView: View {
                     NamesRowView(rowNo: i)//.frame(width: 800, height: 48, alignment: .topLeading).tag(i+1)
                 }
             }
-//            .background(Color.cyan)
-//            .opacity(0.2)
             .padding()
             .frame(width:800)
             .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
         }
-//        .environmentObject(belfastPlayers)
     }
 }
 

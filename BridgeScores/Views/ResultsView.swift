@@ -11,8 +11,9 @@ struct ResultsView: View {
     @EnvironmentObject var results: Results
     @EnvironmentObject var event: Event
     @EnvironmentObject var match: Match
-    @EnvironmentObject var matchPoints: MatchPointRow
+//    @EnvironmentObject var matchPoints: MatchPointRow
     @EnvironmentObject var matchPlayers: MatchPlayers
+//    @StateObject matchPointRow
     
     var body: some View {
       
@@ -52,7 +53,7 @@ struct ResultsView: View {
                     Spacer()
                     Text(String(i+1)).frame(width:80)
                     Spacer()
-                    TextField("Score", value: $results.results[i].masterPoints, formatter: matchPoints.mpFormatter).frame(width: 80)
+                    TextField("Score", value: $results.results[i].masterPoints, formatter: NumberFormatter()).frame(width: 80)
                     Spacer()
                     TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter()).frame(width:80)
                  }.frame(width:800,alignment: .center)
@@ -60,9 +61,15 @@ struct ResultsView: View {
             
         }
         .onAppear(){
+//            print("from pre ResultsView")
+//            print(match.Boards[0])
             results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
-            match.toteMasterPoints(matchResults: results)
+            results.toteMasterPoints(match: match)
+            print(results.results)
+            print(results.results.sorted())
 //            results.results.sort()
+//            print("post ResultsView")
+//            print(match.Boards[0])
         }
         .padding()
         .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
@@ -76,8 +83,8 @@ struct ResultsView_Previews: PreviewProvider {
         ResultsView()
             .environmentObject(Event())
             .environmentObject(Match(event:Event()))
-            .environmentObject(MatchPlayers(noPairs:6))
-            .environmentObject(Results(noPairs: 6))
+            .environmentObject(MatchPlayers(event:Event()))
+            .environmentObject(Results(event: Event()))
             .environmentObject(MatchPointRow())
             .previewInterfaceOrientation(.landscapeRight)
     }

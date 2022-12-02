@@ -42,20 +42,24 @@ struct LegendRowView:View{
 }
 
 struct ContentView: View {
-    @StateObject var match = Match(event: Event())
-    @StateObject var matchPointRow = MatchPointRow()
-    @StateObject var belfastPlayers = BelfastPlayers()
-//    @StateObject var results = Results(noPairs:event.noPairs)
     @EnvironmentObject var event: Event
-    var results:Results{
-        Results(noPairs: event.noPairs)
-
-    }
-//    @StateObject var matchPlayers = MatchPlayers()
-    var matchPlayers:MatchPlayers{
-        MatchPlayers(noPairs:event.noPairs)
-    }
+    @StateObject var match = Match(event: Event())
+//    @StateObject var belfastPlayers = BelfastPlayers()
+    @StateObject var matchPointRow = MatchPointRow()
+    //Need to use computed variable
+    @StateObject var results = Results(event:Event())
+//    var results:Results{
+//        Results(noPairs: event.noPairs)
+//
+//    }
     
+    //Need to use computed variable
+    @StateObject var matchPlayers = MatchPlayers(event:Event())
+//    var matchPlayers:MatchPlayers{
+//        MatchPlayers(noPairs:event.noPairs)
+//    }
+    
+
     var body: some View {
         TabView {
             NamesView().tabItem {
@@ -77,7 +81,7 @@ struct ContentView: View {
         .environmentObject(matchPointRow)
         .environmentObject(results)
         .environmentObject(matchPlayers)
-        .environmentObject(belfastPlayers)
+//        .environmentObject(belfastPlayers)
         .onAppear(){
 //            print(event.eventMovementName)
             match.getLocalData(fileName: event.eventMovementName)
@@ -89,7 +93,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Event())
+        ContentView()
+            .environmentObject(Event())
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

@@ -35,28 +35,21 @@ struct BoardView: View {
     var boardNo:Int
     @EnvironmentObject var match: Match
     @EnvironmentObject var event: Event
-    @EnvironmentObject var matchPoint:MatchPointRow
+    @EnvironmentObject var matchPointRow:MatchPointRow
     var body: some View {
         
-        ZStack{
-//            RoundedRectangle(cornerRadius: 15).fill(.cyan).opacity(0.3)
-//                .frame(width:800,height:480)
-            VStack{
-                CaptionView(boardNo: boardNo)
-                ForEach(0..<event.noPairs,id:\.self){ i in
-                    if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
-                        ContractRow(rowNo:i,boardNo: boardNo)
-                    }
+        VStack{
+            CaptionView(boardNo: boardNo)
+            ForEach(0..<event.noPairs,id:\.self){ i in
+                if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
+                    ContractRow(rowNo:i,boardNo: boardNo)
                 }
             }
-            .padding()
-            
-            .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
         }
-        .padding()
+        .padding()        
+        .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
+        
     }
-    
-
 }
 
 struct BoardView_Previews: PreviewProvider {
