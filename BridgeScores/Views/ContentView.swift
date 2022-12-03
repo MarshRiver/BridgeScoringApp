@@ -43,21 +43,24 @@ struct LegendRowView:View{
 
 struct ContentView: View {
     @EnvironmentObject var event: Event
-    @StateObject var match = Match(event: Event())
-//    @StateObject var belfastPlayers = BelfastPlayers()
     @StateObject var matchPointRow = MatchPointRow()
+
+//    @StateObject var match = Match(event: Event())
+    var match:Match{
+        Match(event:event)
+    }
+//    @StateObject var matchPlayers = MatchPlayers(event : Event())
+//    @StateObject var matchPlayers = MatchPlayers()
+ //Need to use computed variable
+//    @StateObject var results = Results(event:Event())
+   var results:Results{
+       Results(event: event)
+
+    }    
     //Need to use computed variable
-    @StateObject var results = Results(event:Event())
-//    var results:Results{
-//        Results(noPairs: event.noPairs)
-//
-//    }
-    
-    //Need to use computed variable
-    @StateObject var matchPlayers = MatchPlayers(event:Event())
-//    var matchPlayers:MatchPlayers{
-//        MatchPlayers(noPairs:event.noPairs)
-//    }
+    var matchPlayers:MatchPlayers{
+        MatchPlayers(event: event)
+    }
     
 
     var body: some View {
@@ -65,15 +68,8 @@ struct ContentView: View {
             NamesView().tabItem {
                 Label("Players",systemImage: "star.fill")
             }
-            
-            if match.isLoaded{
-            
-                VStack{
-                    LegendRowView()
-                    MatchView()
-                }
+            MatchView()
                 .tabItem{Label("Boards",systemImage:"star.fill")}
-            }
             ResultsView()
                 .tabItem{Label("Results",systemImage:"star.fill")}
         }
@@ -81,13 +77,6 @@ struct ContentView: View {
         .environmentObject(matchPointRow)
         .environmentObject(results)
         .environmentObject(matchPlayers)
-//        .environmentObject(belfastPlayers)
-        .onAppear(){
-//            print(event.eventMovementName)
-            match.getLocalData(fileName: event.eventMovementName)
-//            $match.noPairs = event.noPairs
-//            results = Results(noPairs: event.noPairs)
-        }
     }
 }
 

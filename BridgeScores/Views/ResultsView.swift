@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ResultsView: View {
+    
     @EnvironmentObject var results: Results
     @EnvironmentObject var event: Event
     @EnvironmentObject var match: Match
-//    @EnvironmentObject var matchPoints: MatchPointRow
     @EnvironmentObject var matchPlayers: MatchPlayers
-//    @StateObject matchPointRow
-    
+
     var body: some View {
       
         VStack{
@@ -25,9 +24,11 @@ struct ResultsView: View {
                     .frame(width: 800,height: 40)
                     .shadow(radius: 15.0,x:-5,y:10)
                 HStack{
+                    Spacer()
                     Text(event.eventName).font(.title)
-                    Text("  ")
+                    Spacer()//Text("  ")
                     Text(event.stringDate())
+                    Spacer()
                 }
             }
             HStack{
@@ -44,7 +45,7 @@ struct ResultsView: View {
             }.frame(width:800,alignment: .topLeading)
 
             
-            ForEach(0..<event.noPairs,id: \.self){ i in
+            ForEach(0..<(event.noPairs ?? 6),id: \.self){ i in
                 HStack{
                     TextField("Pair Number", value: $results.results[i].pairNo,formatter: NumberFormatter())
                         .frame(width:80)
@@ -65,12 +66,9 @@ struct ResultsView: View {
 //            print(match.Boards[0])
             results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
             results.toteMasterPoints(match: match)
-            print(results.results)
-            print(results.results.sorted())
-//            results.results.sort()
-//            print("post ResultsView")
-//            print(match.Boards[0])
+            results.results.sort()
         }
+        .frame(width:800)
         .padding()
         .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
 

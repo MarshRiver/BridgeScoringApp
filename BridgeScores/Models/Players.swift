@@ -40,7 +40,7 @@ class MatchPlayers: ObservableObject {
     
 //    init(noPairs:Int!){
     init(event:Event){
-        for i in 0 ..< event.noPairs {
+        for i in 0 ..< (event.noPairs ?? 6) {
             players.append(Pair())
             players[i].pairNo = i + 1
         }

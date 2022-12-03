@@ -40,7 +40,7 @@ struct BoardView: View {
         
         VStack{
             CaptionView(boardNo: boardNo)
-            ForEach(0..<event.noPairs,id:\.self){ i in
+            ForEach(0..<event.noPairs ,id:\.self){ i in
                 if (boardNo < match.Boards.count) && (i < match.Boards[boardNo].contracts.count) {
                     ContractRow(rowNo:i,boardNo: boardNo)
                 }

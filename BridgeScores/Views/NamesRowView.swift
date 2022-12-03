@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NamesRowView: View {
     var rowNo:Int
-    @State var belfastPlayers = BelfastPlayers()
     @EnvironmentObject var matchPlayers:MatchPlayers
+    @State var belfastPlayers = BelfastPlayers()
     @State var playerIndex = 0
     @State var playerIndex1 = 0
     
@@ -31,7 +31,6 @@ struct NamesRowView: View {
                 .onChange(of: playerIndex) {newValue in
                     matchPlayers.players[rowNo].playerOne.firstName = belfastPlayers.players[newValue].firstName
                     matchPlayers.players[rowNo].playerOne.lastName = belfastPlayers.players[newValue].lastName
-                    //                print(matchPlayers.players)
                     
                 }
                 
@@ -47,12 +46,11 @@ struct NamesRowView: View {
                 .onChange(of: playerIndex1){ newValue in
                     matchPlayers.players[rowNo].playerTwo.firstName = belfastPlayers.players[newValue].firstName
                     matchPlayers.players[rowNo].playerTwo.lastName = belfastPlayers.players[newValue].lastName
-                    //                print(matchPlayers.players)
                 }
                 Spacer()
         }
-        }
     }
+}
 
 
 

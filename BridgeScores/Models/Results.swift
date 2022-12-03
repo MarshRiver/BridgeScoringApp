@@ -10,29 +10,32 @@ import Foundation
 
 class Results: ObservableObject{
     @Published var results = [ResultsRow]()
-//    init(noPairs:Int!){
+    
+    
     init(event:Event){
-//        rowCount = event.noPairs
-        for index in 0..<event.noPairs {
+        for index in 0..<(event.noPairs ?? 6) {
             results.append(ResultsRow(pairNo:index + 1))
         }
     }
     
-    func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
-        
-        for i  in 0..<matchResults.results.count {
-            results[i].PlayerNames =
-                matchPlayers.players[i].playerOne.firstName
-                + " & " + matchPlayers.players[i].playerTwo.firstName
-        }
+    
+    func fillResults(){
         
         
     }
     
+    
+    func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
+        
+        for i in 0..<matchResults.results.count {
+            results[i].PlayerNames =
+                matchPlayers.players[i].playerOne.firstName
+                + " & " + matchPlayers.players[i].playerTwo.firstName
+        }
+    }
+    
     func toteMasterPoints(match: Match){
         //Inititalize resultRows
-//        print("in results")
-//        print(match.Boards[0])
         for i in 0..<results.count {
             results[i].masterPoints = 0.0
         }
@@ -48,7 +51,6 @@ class Results: ObservableObject{
                 }
             }
         }
-//        printResults(results: matchResults)
     }
 
 }
@@ -66,12 +68,12 @@ struct ResultsRow: Comparable {
 }
 
 
-//func printResults(results: Results){
-//
-//    for row in 0..<results.rowCount{
-//        print(String(results.results[row].pairNo)
-//              + "  " + String(results.results[row].masterPoints)
-//              + "  " + results.results[row].PlayerNames)
-//    }
-//
-//}
+func printResults(results: Results){
+
+    for row in 0..<6{
+        print(String(results.results[row].pairNo)
+              + "  " + String(results.results[row].masterPoints)
+              + "  " + results.results[row].PlayerNames)
+    }
+
+}
