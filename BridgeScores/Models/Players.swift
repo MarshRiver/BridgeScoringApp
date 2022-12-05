@@ -33,6 +33,16 @@ class BelfastPlayers:ObservableObject {
     }
 }
 
+class EntryNames: ObservableObject {
+    @Published var players = [String]()
+    
+    init(event:Event){
+        for _ in 0..<event.noPairs{
+            players.append("")
+            
+        }
+    }
+}
 
 class MatchPlayers: ObservableObject {
 //    var noPairs:Int!

@@ -25,19 +25,25 @@ class Results: ObservableObject{
     }
     
     
-    func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
-        
-        for i in 0..<matchResults.results.count {
-            results[i].PlayerNames =
-                matchPlayers.players[i].playerOne.firstName
-                + " & " + matchPlayers.players[i].playerTwo.firstName
+//    func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
+    func fillPlayerNames(matchResults: Results, entryNames:EntryNames){
+
+        for i in 0..<matchResults.results.count{
+            results[i].PlayerNames = entryNames.players[i]
         }
+        //For use with pull down dialog
+//        for i in 0..<matchResults.results.count {
+//            results[i].PlayerNames =
+//                matchPlayers.players[i].playerOne.firstName
+//                + " & " + matchPlayers.players[i].playerTwo.firstName
+//        }
     }
     
     func toteMasterPoints(match: Match){
         //Inititalize resultRows
         for i in 0..<results.count {
             results[i].masterPoints = 0.0
+            results[i].pairNo = i + 1
         }
         
         //for each board

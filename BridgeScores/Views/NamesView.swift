@@ -32,13 +32,20 @@ struct NamesView: View {
                 }
 
                 //Name pickers
-                ForEach(0..<event.noPairs,id:\.self) { i in
-                    NamesRowView(rowNo: i)
+                    Form(){
+                        Section {
+                            ForEach(0..<event.noPairs,id:\.self) { i in
+        //                    NamesRowView(rowNo: i)
+                                NamesEntryRow(pairNo: i)
+                            }
+                        }
+
+                    }
                 }
-            }
             .padding()
             .frame(width:800)
             .border(.cyan, width: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
+//            .environmentObject(entryNames)
     }
 }
 

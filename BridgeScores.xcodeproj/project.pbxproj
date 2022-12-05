@@ -15,6 +15,7 @@
 		F379B50128138B5B00F711BB /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379B50028138B5B00F711BB /* Players.swift */; };
 		F38C832A2931228900F46E39 /* BelfastNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F38C83292931228900F46E39 /* BelfastNames.json */; };
 		F392A5182936C61900858158 /* NamesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392A5172936C61900858158 /* NamesRowView.swift */; };
+		F3A0F7ED293D5F83006E8B2E /* NamesEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */; };
 		F3ACBD06281833D700510F82 /* Howell-8.json in Resources */ = {isa = PBXBuildFile; fileRef = F3ACBD05281833D700510F82 /* Howell-8.json */; };
 		F3AE8BD72814B75000BDAC73 /* Names.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE8BD62814B75000BDAC73 /* Names.json */; };
 		F3B942452816FAF900D045DB /* Howell-7.json in Resources */ = {isa = PBXBuildFile; fileRef = F3B942442816FAF900D045DB /* Howell-7.json */; };
@@ -41,6 +42,7 @@
 		F379B50028138B5B00F711BB /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		F38C83292931228900F46E39 /* BelfastNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BelfastNames.json; sourceTree = "<group>"; };
 		F392A5172936C61900858158 /* NamesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesRowView.swift; sourceTree = "<group>"; };
+		F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEntryRow.swift; sourceTree = "<group>"; };
 		F3ACBD05281833D700510F82 /* Howell-8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-8.json"; sourceTree = "<group>"; };
 		F3AE8BD62814B75000BDAC73 /* Names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Names.json; sourceTree = "<group>"; };
 		F3B942442816FAF900D045DB /* Howell-7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-7.json"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				F3EEC822292083610026A6D9 /* ResultsView.swift */,
 				F3EB185D29355A5B007C678A /* MatchView.swift */,
 				F392A5172936C61900858158 /* NamesRowView.swift */,
+				F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				F3CAAB0529203B7000F1FAD3 /* Results.swift in Sources */,
 				F33975DF281343560026CA4F /* NamesView.swift in Sources */,
 				F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */,
+				F3A0F7ED293D5F83006E8B2E /* NamesEntryRow.swift in Sources */,
 				F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */,
 				F3F796D32825D57300D93CBE /* TopView.swift in Sources */,
 				F333574B28103C9300A4BC97 /* Match.swift in Sources */,

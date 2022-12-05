@@ -45,23 +45,22 @@ struct ContentView: View {
     @EnvironmentObject var event: Event
     @StateObject var matchPointRow = MatchPointRow()
 
-//    @StateObject var match = Match(event: Event())
     var match:Match{
         Match(event:event)
     }
-//    @StateObject var matchPlayers = MatchPlayers(event : Event())
-//    @StateObject var matchPlayers = MatchPlayers()
- //Need to use computed variable
-//    @StateObject var results = Results(event:Event())
-   var results:Results{
+
+    var results:Results{
        Results(event: event)
 
     }    
-    //Need to use computed variable
     var matchPlayers:MatchPlayers{
         MatchPlayers(event: event)
     }
-    
+    var entryNames: EntryNames
+    {
+        EntryNames(event: event)
+    }
+
 
     var body: some View {
         TabView {
@@ -77,6 +76,7 @@ struct ContentView: View {
         .environmentObject(matchPointRow)
         .environmentObject(results)
         .environmentObject(matchPlayers)
+        .environmentObject(entryNames)
     }
 }
 

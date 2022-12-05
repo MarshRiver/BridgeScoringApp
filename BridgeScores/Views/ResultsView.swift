@@ -13,6 +13,7 @@ struct ResultsView: View {
     @EnvironmentObject var event: Event
     @EnvironmentObject var match: Match
     @EnvironmentObject var matchPlayers: MatchPlayers
+    @EnvironmentObject var entryNames:EntryNames
 
     var body: some View {
       
@@ -62,9 +63,9 @@ struct ResultsView: View {
             
         }
         .onAppear(){
-//            print("from pre ResultsView")
-//            print(match.Boards[0])
-            results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
+//            results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
+            results.fillPlayerNames(matchResults: results, entryNames: entryNames)
+
             results.toteMasterPoints(match: match)
             results.results.sort()
         }
