@@ -64,13 +64,12 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            NamesView().tabItem {
-                Label("Players",systemImage: "star.fill")
-            }
+            NamesView()
+                .tabItem {Label("Players",systemImage: "star.fill")}
             MatchView()
-                .tabItem{Label("Boards",systemImage:"star.fill")}
+                .tabItem {Label("Boards",systemImage:"star.fill")}
             ResultsView()
-                .tabItem{Label("Results",systemImage:"star.fill")}
+                .tabItem {Label("Results",systemImage:"star.fill")}
         }
         .environmentObject(match)
         .environmentObject(matchPointRow)

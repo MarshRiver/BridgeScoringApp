@@ -12,16 +12,30 @@ struct MatchView: View {
     @EnvironmentObject var event:Event
     var body: some View {
         ScrollView {
-            ForEach(match.Boards,id:\.boardNo){ board in
-                if board.boardNo < match.Boards.count{
-                    BoardView(boardNo: board.boardNo)
-                }
+            LazyVStack{
                 
+                ForEach(match.Boards,id:\.boardNo){ board in
+                    if board.boardNo < match.Boards.count{
+                        BoardView(boardNo: board.boardNo)
+                    }
+
+                }
             }
         }
         .environmentObject(match)
         .environmentObject(event)
-
+//        TabView {
+//            ForEach(match.Boards,id:\.boardNo){ board in
+//                if board.boardNo < match.Boards.count{
+//                    BoardView(boardNo: board.boardNo)
+//                        .tabItem{Text(String(board.boardNo + 1))}
+//                }
+//
+//            }
+//        }
+//        .environmentObject(match)
+//        .environmentObject(event)
+//
     }
 }
 

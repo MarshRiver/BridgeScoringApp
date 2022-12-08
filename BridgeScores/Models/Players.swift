@@ -33,6 +33,7 @@ class BelfastPlayers:ObservableObject {
     }
 }
 
+
 class EntryNames: ObservableObject {
     @Published var players = [String]()
     
