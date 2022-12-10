@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct TextBox: View{
+    var s:String
+    var body: some View{
+        Text(s)
+            .bold()
+            .frame(width:50)
+    }
+}
+
 struct LegendRowView:View{
     var body: some View {
         
@@ -70,6 +79,8 @@ struct ContentView: View {
                 .tabItem {Label("Boards",systemImage:"star.fill")}
             ResultsView()
                 .tabItem {Label("Results",systemImage:"star.fill")}
+//            TestKeyPadView()
+//                .tabItem {Label("Test",systemImage:"star.fill")}
         }
         .environmentObject(match)
         .environmentObject(matchPointRow)

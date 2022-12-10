@@ -55,7 +55,7 @@ struct ResultsView: View {
                     Spacer()
                     Text(String(i+1)).frame(width:80)
                     Spacer()
-                    TextField("Score", value: $results.results[i].masterPoints, formatter: NumberFormatter()).frame(width: 80)
+                    TextField("Score", value: $results.results[i].masterPoints, format:.number).frame(width: 80)
                     Spacer()
                     TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter()).frame(width:80)
                  }.frame(width:800,alignment: .center)
