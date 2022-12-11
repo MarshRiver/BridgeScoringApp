@@ -22,6 +22,30 @@ import SwiftUI
 //        })
 //    }
 //}
+func numbersOnly(input: String) -> String{
+    var output = ""
+    for c in input {
+        if
+            c != "0" &&
+                c != "1" &&
+                c != "2" &&
+                c != "3" &&
+                c != "4" &&
+                c != "5" &&
+                c != "6" &&
+                c != "7" &&
+                c != "8" &&
+                c != "9"
+            {
+            print(c)
+        }
+        else {
+            output.append(c)
+        }
+    }
+    return output
+}
+
 
 struct ContractRow: View {
     var rowNo:Int
@@ -46,6 +70,11 @@ struct ContractRow: View {
                         .font(.title2)
                         .frame(width:80)
                     TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
+                        .onChange(of: match.Boards[boardNo].contracts[rowNo].down, perform: { newValue in
+                            print(newValue)
+                            match.Boards[boardNo].contracts[rowNo].down = numbersOnly(input: newValue)
+                        })
+
                         .font(.title2)
                         .frame(width:80)
                     TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
