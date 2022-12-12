@@ -18,26 +18,15 @@ struct MatchView: View {
                     if board.boardNo < match.Boards.count{
                         BoardView(boardNo: board.boardNo)
                     }
-
+                    
                 }
             }
         }
         .environmentObject(match)
         .environmentObject(event)
-//        TabView {
-//            ForEach(match.Boards,id:\.boardNo){ board in
-//                if board.boardNo < match.Boards.count{
-//                    BoardView(boardNo: board.boardNo)
-//                        .tabItem{Text(String(board.boardNo + 1))}
-//                }
-//
-//            }
-//        }
-//        .environmentObject(match)
-//        .environmentObject(event)
-//
     }
 }
+
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
