@@ -48,7 +48,7 @@ struct ResultsView: View {
             
             ForEach(0..<(event.noPairs ?? 6),id: \.self){ i in
                 HStack{
-                    TextField("Pair Number", value: $results.results[i].pairNo,formatter: NumberFormatter())
+                    TextField("Pair", value: $results.results[i].pairNo,formatter: NumberFormatter())
                         .frame(width:80)
                     Spacer()
                     TextField("Players", text: $results.results[i].PlayerNames).frame(width:200)
@@ -57,15 +57,14 @@ struct ResultsView: View {
                     Spacer()
                     TextField("Score", value: $results.results[i].masterPoints, format:.number).frame(width: 80)
                     Spacer()
-                    TextField("0.0", value: $results.results[i].percent,formatter:NumberFormatter()).frame(width:80)
-                 }.frame(width:800,alignment: .center)
+                    TextField("0.0", value: $results.results[i].percent,format:.number).frame(width: 80)
+                 }
+                .frame(width:800,alignment: .center)
             }
             
         }
         .onAppear(){
-//            results.fillPlayerNames(matchResults: results, matchPlayers: matchPlayers)
             results.fillPlayerNames(matchResults: results, entryNames: entryNames)
-
             results.toteMasterPoints(match: match)
             results.results.sort()
         }

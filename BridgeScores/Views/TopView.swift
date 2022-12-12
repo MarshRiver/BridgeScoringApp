@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-//let MovementPicker = Picker("Movement")
-
 
 struct TopView: View {
     @State var isSelected = false

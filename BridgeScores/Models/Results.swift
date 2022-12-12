@@ -44,6 +44,8 @@ class Results: ObservableObject{
         for i in 0..<results.count {
             results[i].masterPoints = 0.0
             results[i].pairNo = i + 1
+            results[i].percent = 0.0
+            results[i].maxPossible = 0.0
         }
         
         //for each board
@@ -52,11 +54,20 @@ class Results: ObservableObject{
             board.contracts.forEach { contract in
                 //test for EW Pair and NS Pair not null
                 if contract.nsPair != "" && contract.ewPair != ""   {
-                    results[(Int(contract.nsPair) ?? 0) - 1].masterPoints += contract.nsMP
-                    results[(Int(contract.ewPair) ?? 0) - 1].masterPoints += contract.ewMP
+                    //Caluculate ns numbers
+                    let nsPair = (Int(contract.nsPair) ?? 0)
+                    results[nsPair - 1].masterPoints += contract.nsMP
+                    results[nsPair - 1].maxPossible += 2.0
+                    let ewPair = (Int(contract.ewPair) ?? 0)
+                    results[ewPair - 1].masterPoints += contract.ewMP
+                    results[ewPair - 1].maxPossible += 2.0
                 }
             }
         }
+        
+        for i in 0..<results.count {
+            results[i].percent = 100 * results[i].masterPoints/results[i].maxPossible
+        }        
     }
 
 }
@@ -69,6 +80,7 @@ struct ResultsRow: Comparable {
     var pairNo = 0
     var PlayerNames = "Joe & Judy"
     var masterPoints = 0.0
+    var maxPossible = 0.0
     var percent = 0.0
     var Rank = 0
 }

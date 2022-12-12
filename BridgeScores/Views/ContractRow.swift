@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-
-//struct IntField: View {
-//    @Binding var int: Int
-//    @State private var intString: String  = ""
-//    var body: some View {
-//        return TextField("", text: $intString)
-//        .onReceive(Just(intString)) { value in
-//            if let i = Int(value) { int = i }
-//            else { intString = "\(int)" }
-//        }
-//        .onAppear(perform: {
-//            intString = "\(int)"
-//        })
-//    }
-//}
 func numbersOnly(input: String) -> String{
     var output = ""
     for c in input {
@@ -35,7 +20,8 @@ func numbersOnly(input: String) -> String{
                 c != "6" &&
                 c != "7" &&
                 c != "8" &&
-                c != "9"
+                c != "9" &&
+                c != "-"
             {
             print(c)
         }
@@ -45,7 +31,6 @@ func numbersOnly(input: String) -> String{
     }
     return output
 }
-
 
 struct ContractRow: View {
     var rowNo:Int
@@ -70,11 +55,6 @@ struct ContractRow: View {
                         .font(.title2)
                         .frame(width:80)
                     TextField("Down",text: $match.Boards[boardNo].contracts[rowNo].down)
-                        .onChange(of: match.Boards[boardNo].contracts[rowNo].down, perform: { newValue in
-                            print(newValue)
-                            match.Boards[boardNo].contracts[rowNo].down = numbersOnly(input: newValue)
-                        })
-
                         .font(.title2)
                         .frame(width:80)
                     TextField("NSScore",text: $match.Boards[boardNo].contracts[rowNo].nsScore)
@@ -82,6 +62,9 @@ struct ContractRow: View {
                         .frame(width:80)
                         .autocorrectionDisabled(true)
                         .disableAutocorrection(true)
+                        .onChange(of: match.Boards[boardNo].contracts[rowNo].nsScore, perform: { newValue in
+                            match.Boards[boardNo].contracts[rowNo].nsScore = numbersOnly(input: newValue)
+                        })
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setEWScore(score: match.Boards[boardNo].contracts[rowNo].nsScore)
                             matchPoint.fillMatchTable(match: match, boardNo: boardNo)
@@ -92,6 +75,9 @@ struct ContractRow: View {
                         .frame(width:80)
                         .autocorrectionDisabled(true)
                         .disableAutocorrection(true)
+                        .onChange(of: match.Boards[boardNo].contracts[rowNo].ewScore, perform: { newValue in
+                            match.Boards[boardNo].contracts[rowNo].ewScore = numbersOnly(input: newValue)
+                        })
                         .onSubmit{
                             match.Boards[boardNo].contracts[rowNo].setNSScore(score: match.Boards[boardNo].contracts[rowNo].ewScore)
                             matchPoint.fillMatchTable(match: match, boardNo: boardNo)

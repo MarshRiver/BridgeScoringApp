@@ -79,8 +79,8 @@ struct ContentView: View {
                 .tabItem {Label("Boards",systemImage:"star.fill")}
             ResultsView()
                 .tabItem {Label("Results",systemImage:"star.fill")}
-            TestKeyPadView()
-                .tabItem {Label("Test",systemImage:"star.fill")}
+//            TestKeyPadView()
+//                .tabItem {Label("Test",systemImage:"star.fill")}
         }
         .environmentObject(match)
         .environmentObject(matchPointRow)
