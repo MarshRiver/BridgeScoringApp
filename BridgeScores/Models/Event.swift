@@ -11,6 +11,8 @@ import Foundation
 
 let Movementsjson = """
 [
+{"id":1,"name":"Howell-4-24W","noPairs":4},
+{"id":1,"name":"Howell-5-25B","noPairs":5},
 {"id":1,"name":"Howell-6","noPairs":6},
 {"id":2,"name":"Howell-7","noPairs":7},
 {"id":3,"name":"Howell-8","noPairs":8},
