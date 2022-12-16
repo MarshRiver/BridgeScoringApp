@@ -6,9 +6,12 @@
 //
 
 import Foundation
+//import CSVParser
+import UIKit
+import MessageUI
 
 
-class Results: ObservableObject{
+class Results: ObservableObject {
     @Published var results = [ResultsRow]()
     
     
@@ -23,7 +26,8 @@ class Results: ObservableObject{
         
         
     }
-    
+
+
     
 //    func fillPlayerNames(matchResults: Results, matchPlayers: MatchPlayers){
     func fillPlayerNames(matchResults: Results, entryNames:EntryNames){
@@ -69,7 +73,26 @@ class Results: ObservableObject{
             results[i].percent = 100 * results[i].masterPoints/results[i].maxPossible
         }        
     }
-
+    
+//    func emailResults(results: Results){
+//        //Start email process to send Result.csv
+//        if !MFMailComposeViewController.canSendMail(){
+//            print("Mail service are not available")
+//            return
+//        }
+//
+//        let composeVC = MFMailComposeViewController()
+//        composeVC.mailComposeDelegate = self
+//
+//        // Configure the fields of the interface.
+//        composeVC.setToRecipients(["address@example.com"])
+//        composeVC.setSubject("Hello!")
+//        composeVC.setMessageBody("Hello from California!", isHTML: false)
+//
+//        // Present the view controller modally.
+//        self.present(composeVC, animated: true, completion: nil)
+//
+//    }
 }
 
 struct ResultsRow: Comparable {
@@ -88,10 +111,60 @@ struct ResultsRow: Comparable {
 
 func printResults(results: Results){
 
-    for row in 0..<6{
+    for row in 0..<results.results.count{
         print(String(results.results[row].pairNo)
               + "  " + String(results.results[row].masterPoints)
               + "  " + results.results[row].PlayerNames)
     }
+    
+// From https://developer.apple.com/forums/thread/62404
+//    guard let csvPath = Bundle.main.path(forResource: "fileName", ofType: "csv") else { return }
 
+//    do {
+//        let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+//        let csv = csvData.csvRows()
+//
+//        for row in csv {
+//            print(row)
+//        }
+//    } catch{
+//        print(error)
+//    }
+//
+
+}
+
+func outPutCSV(results:Results){
+    //Bundle.main.url(forResource: fileName, withExtension: "json")
+    //https://medium.com/@CoreyWDavis/reading-writing-and-deleting-files-in-swift-197e886416b0
+    let outputPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//    let outputPath = FileManager().NShomeDirectoryForUser(userName)
+//    let fileURL = Bundle.main.url(forResource: "Results", withExtension: "csv")
+    
+    let fileURL = URL(fileURLWithPath: "Results", relativeTo: outputPath).appendingPathExtension("csv")
+    
+    var outputString = "\n\("Pair"),\("Players"),\("Rank"),\("Score"),\("Percentage")\n\n"
+    for row in 0..<results.results.count{
+        outputString = outputString.appending(String(results.results[row].pairNo) + ",")
+        outputString = outputString.appending(results.results[row].PlayerNames + ",")
+        outputString = outputString.appending(String(results.results[row].Rank) + ",")
+        outputString = outputString.appending(String(results.results[row].masterPoints) + ",")
+        outputString = outputString.appending(String(results.results[row].percent))
+        outputString = outputString.appending("\n")
+    }
+    guard let data = outputString.data(using: .utf8) else {
+        print("unable to convert string data")
+        return
+    }
+    // Save the data
+    do {
+     try data.write(to: fileURL )
+        print("File saved: \(fileURL.absoluteURL)")
+    } catch {
+     // Catch any errors
+     print(error.localizedDescription)
+    }
+
+    print(outputString)
+    
 }

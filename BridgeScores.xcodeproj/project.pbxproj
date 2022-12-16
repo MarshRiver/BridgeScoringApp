@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F32549702943BCD10013F5BC /* TestKeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F325496F2943BCD10013F5BC /* TestKeyPadView.swift */; };
+		F3327EB4294954140026D1D9 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327EB3294954140026D1D9 /* CSVParser.swift */; };
 		F333574B28103C9300A4BC97 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = F333574A28103C9300A4BC97 /* Match.swift */; };
 		F333574D28103D5B00A4BC97 /* Howell-6.json in Resources */ = {isa = PBXBuildFile; fileRef = F333574C28103D5B00A4BC97 /* Howell-6.json */; };
 		F33975DF281343560026CA4F /* NamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33975DE281343560026CA4F /* NamesView.swift */; };
@@ -16,6 +17,7 @@
 		F379B50128138B5B00F711BB /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379B50028138B5B00F711BB /* Players.swift */; };
 		F38C832A2931228900F46E39 /* BelfastNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F38C83292931228900F46E39 /* BelfastNames.json */; };
 		F392A5182936C61900858158 /* NamesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392A5172936C61900858158 /* NamesRowView.swift */; };
+		F3950866294AC4F400ADA771 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3950865294AC4F400ADA771 /* Email.swift */; };
 		F3A0F7ED293D5F83006E8B2E /* NamesEntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */; };
 		F3ACBD06281833D700510F82 /* Howell-8.json in Resources */ = {isa = PBXBuildFile; fileRef = F3ACBD05281833D700510F82 /* Howell-8.json */; };
 		F3AE8BD72814B75000BDAC73 /* Names.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AE8BD62814B75000BDAC73 /* Names.json */; };
@@ -35,10 +37,12 @@
 		F3F209A1282AF4370063A2E9 /* MPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F209A0282AF4370063A2E9 /* MPModel.swift */; };
 		F3F312492826F13100BD47A1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F312482826F13100BD47A1 /* Event.swift */; };
 		F3F796D32825D57300D93CBE /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F796D22825D57300D93CBE /* TopView.swift */; };
+		F3F8F923294B8407001BE43C /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F8F922294B8407001BE43C /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F325496F2943BCD10013F5BC /* TestKeyPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyPadView.swift; sourceTree = "<group>"; };
+		F3327EB3294954140026D1D9 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		F333574A28103C9300A4BC97 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		F333574C28103D5B00A4BC97 /* Howell-6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-6.json"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		F33975DE281343560026CA4F /* NamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		F379B50028138B5B00F711BB /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		F38C83292931228900F46E39 /* BelfastNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BelfastNames.json; sourceTree = "<group>"; };
 		F392A5172936C61900858158 /* NamesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesRowView.swift; sourceTree = "<group>"; };
+		F3950865294AC4F400ADA771 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		F3950867294AD28900ADA771 /* Results.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Results.csv; sourceTree = "<group>"; };
 		F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEntryRow.swift; sourceTree = "<group>"; };
 		F3ACBD05281833D700510F82 /* Howell-8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Howell-8.json"; sourceTree = "<group>"; };
 		F3AE8BD62814B75000BDAC73 /* Names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Names.json; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 		F3F209A0282AF4370063A2E9 /* MPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPModel.swift; sourceTree = "<group>"; };
 		F3F312482826F13100BD47A1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F3F796D22825D57300D93CBE /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		F3F8F922294B8407001BE43C /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 		F333574928103C6B00A4BC97 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F3950867294AD28900ADA771 /* Results.csv */,
 				F3B091E92947F52B0012A4B4 /* Howell-4-24W.json */,
 				F3B091EA2947F52B0012A4B4 /* Howell-5-25B.json */,
 				F3793ED2292DB0C5003CA1B3 /* Howell-6-25Bluedebug.json */,
@@ -146,6 +154,7 @@
 				F3A0F7EC293D5F83006E8B2E /* NamesEntryRow.swift */,
 				F3CCC2E52942405C00736C81 /* KeyPadView.swift */,
 				F325496F2943BCD10013F5BC /* TestKeyPadView.swift */,
+				F3F8F922294B8407001BE43C /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +168,8 @@
 				F3F312482826F13100BD47A1 /* Event.swift */,
 				F3F209A0282AF4370063A2E9 /* MPModel.swift */,
 				F3CAAB0429203B7000F1FAD3 /* Results.swift */,
+				F3327EB3294954140026D1D9 /* CSVParser.swift */,
+				F3950865294AC4F400ADA771 /* Email.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +218,8 @@
 				Base,
 			);
 			mainGroup = F3E8308D280B395100CDA2A9;
+			packageReferences = (
+			);
 			productRefGroup = F3E83097280B395100CDA2A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,17 +260,20 @@
 				F3E8309C280B395100CDA2A9 /* ContentView.swift in Sources */,
 				F3CCC2E62942405C00736C81 /* KeyPadView.swift in Sources */,
 				F3EB185E29355A5B007C678A /* MatchView.swift in Sources */,
+				F3950866294AC4F400ADA771 /* Email.swift in Sources */,
 				F37813B7280C6C1A00659634 /* BoardView.swift in Sources */,
 				F3F312492826F13100BD47A1 /* Event.swift in Sources */,
 				F32549702943BCD10013F5BC /* TestKeyPadView.swift in Sources */,
 				F3F209A1282AF4370063A2E9 /* MPModel.swift in Sources */,
 				F392A5182936C61900858158 /* NamesRowView.swift in Sources */,
+				F3327EB4294954140026D1D9 /* CSVParser.swift in Sources */,
 				F3CAAB0529203B7000F1FAD3 /* Results.swift in Sources */,
 				F33975DF281343560026CA4F /* NamesView.swift in Sources */,
 				F3E830AC280B3BAF00CDA2A9 /* ContractRow.swift in Sources */,
 				F3A0F7ED293D5F83006E8B2E /* NamesEntryRow.swift in Sources */,
 				F3E8309A280B395100CDA2A9 /* BridgeScoresApp.swift in Sources */,
 				F3F796D32825D57300D93CBE /* TopView.swift in Sources */,
+				F3F8F923294B8407001BE43C /* MailView.swift in Sources */,
 				F333574B28103C9300A4BC97 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

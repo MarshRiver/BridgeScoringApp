@@ -79,6 +79,8 @@ struct ContentView: View {
                 .tabItem {Label("Boards",systemImage:"star.fill")}
             ResultsView()
                 .tabItem {Label("Results",systemImage:"star.fill")}
+            MailView()
+                .tabItem {Label("Mail",systemImage:"star.fill")}
 //            TestKeyPadView()
 //                .tabItem {Label("Test",systemImage:"star.fill")}
         }

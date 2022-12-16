@@ -30,6 +30,11 @@ struct ResultsView: View {
                     Spacer()//Text("  ")
                     Text(event.stringDate())
                     Spacer()
+                    Button("Save", action: {
+                        outPutCSV(results: results)
+//                        sendEmail()
+                    }).padding()
+                    Spacer()
                 }
             }
             HStack{
@@ -67,6 +72,7 @@ struct ResultsView: View {
             results.fillPlayerNames(matchResults: results, entryNames: entryNames)
             results.toteMasterPoints(match: match)
             results.results.sort()
+//            printResults(results: results)
         }
         .frame(width:800)
         .padding()
@@ -84,6 +90,7 @@ struct ResultsView_Previews: PreviewProvider {
             .environmentObject(MatchPlayers(event:Event()))
             .environmentObject(Results(event: Event()))
             .environmentObject(MatchPointRow())
+            .environmentObject(EntryNames(event:Event()))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
