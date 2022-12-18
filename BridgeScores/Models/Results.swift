@@ -21,9 +21,13 @@ class Results: ObservableObject {
     }
     
     
-    func fillResults(){
-        
-        
+    //Add all data to Result array
+    func fillResults(match:Match,entryNames:EntryNames){
+                
+        fillPlayerNames(matchResults: self, entryNames: entryNames)
+        toteMasterPoints(match: match)
+        results.sort()
+
     }
 
 

@@ -19,35 +19,14 @@ struct MailView: View {
     
     var body: some View {
         let fileURL = URL(fileURLWithPath: "Results", relativeTo: outputPath).appendingPathExtension("csv")
-         Button(action: {
-             self.isShowingMailView.toggle()
-         }) {
-             Text("Tap Me")
-         }
-         .disabled(!MFMailComposeViewController.canSendMail())
-         .sheet(isPresented: $isShowingMailView) {
-             MailView2(data: NSData(contentsOf: fileURL)! as Data, result: self.$result)
-         }
-     }
+        
+        if MFMailComposeViewController.canSendMail(){
+            MailView2(data: NSData(contentsOf: fileURL)! as Data, result: self.$result)
+        } else{
+            Text("Email not available")
+        }
+    }
 
-    
-    //    var emailer = emailResults(delegate: self)
-    
-//    var body: some View {
-//        VStack{
-//            Spacer()
-//
-//            Text("File Emailer")
-//            Spacer()
-//
-//            if emailer.canSendEmail(){
-//                emailer
-//
-//            }
-//            Text("Email not available")
-//            Spacer()
-//        }
-//     }
 }
 
 struct MailView_Previews: PreviewProvider {

@@ -16,7 +16,7 @@ struct ResultsView: View {
     @EnvironmentObject var entryNames:EntryNames
 
     var body: some View {
-      
+ 
         VStack{
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
@@ -57,7 +57,7 @@ struct ResultsView: View {
                     Spacer()
                     TextField("Players", text: $results.results[i].PlayerNames).frame(width:200)
                     Spacer()
-                    Text("Players", text: $results.results[i].Rank).frame(width:80)
+                    TextField("Rank", value: $results.results[i].Rank,format:.number).frame(width:80)
                     Spacer()
                     TextField("Score", value: $results.results[i].masterPoints, format:.number).frame(width: 80)
                     Spacer()
@@ -68,11 +68,7 @@ struct ResultsView: View {
             
         }
         .onAppear(){
-            results.fillPlayerNames(matchResults: results, entryNames: entryNames)
-            results.toteMasterPoints(match: match)
-            results.results.sort()
-            //TODO: add Rank....move these calls to a single function in results.swift
-//            printResults(results: results)
+            results.fillResults(match: match, entryNames: entryNames)
         }
         .frame(width:800)
         .padding()

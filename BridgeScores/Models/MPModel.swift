@@ -28,7 +28,6 @@ class MatchPointRow: ObservableObject  {
         board.removeAll(where: {
             $0.nsPair == ""})
         
-        //TODO: Assign negative scores from EW score
         for index in 0..<board.count {
             if board[index].nsScore == "" {
                 board[index].nsScore = String(-(Int(board[index].ewScore) ?? minusInfinity))
@@ -68,8 +67,7 @@ class MatchPointRow: ObservableObject  {
         var MP = Array(repeating: 0.0 , count: board.count)
         index = 0
         for elem in rankingList {
-            //TODO:
-            //3.0 should be a variable depending on #pairs
+            //TODO: 3.0 should be a variable depending on #pairs
             MP[index] = 3.0 - Double(elem.rank) - (ties[index] - 1.0) * 0.5
             index += 1
         }
