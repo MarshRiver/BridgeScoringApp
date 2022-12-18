@@ -44,7 +44,6 @@ class Event: ObservableObject {
         }
         eventMovementName = Movements[0].name
         noPairs = Movements[0].noPairs
-        print(eventMovementName + "  " + String(noPairs) + " in event.swift")
     }
     
     func stringDate() -> String {

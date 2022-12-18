@@ -32,7 +32,6 @@ struct ResultsView: View {
                     Spacer()
                     Button("Save", action: {
                         outPutCSV(results: results)
-//                        sendEmail()
                     }).padding()
                     Spacer()
                 }
@@ -51,14 +50,14 @@ struct ResultsView: View {
             }.frame(width:800,alignment: .topLeading)
 
             
-            ForEach(0..<(event.noPairs ?? 6),id: \.self){ i in
+            ForEach(0..<(event.noPairs ?? 6),id: \.self) { i in
                 HStack{
                     TextField("Pair", value: $results.results[i].pairNo,formatter: NumberFormatter())
                         .frame(width:80)
                     Spacer()
                     TextField("Players", text: $results.results[i].PlayerNames).frame(width:200)
                     Spacer()
-                    Text(String(i+1)).frame(width:80)
+                    Text("Players", text: $results.results[i].Rank).frame(width:80)
                     Spacer()
                     TextField("Score", value: $results.results[i].masterPoints, format:.number).frame(width: 80)
                     Spacer()
@@ -72,6 +71,7 @@ struct ResultsView: View {
             results.fillPlayerNames(matchResults: results, entryNames: entryNames)
             results.toteMasterPoints(match: match)
             results.results.sort()
+            //TODO: add Rank....move these calls to a single function in results.swift
 //            printResults(results: results)
         }
         .frame(width:800)

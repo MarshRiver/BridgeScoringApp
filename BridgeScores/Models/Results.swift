@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import CSVParser
 import UIKit
 import MessageUI
 
@@ -69,8 +68,9 @@ class Results: ObservableObject {
             }
         }
         
+        
         for i in 0..<results.count {
-            results[i].percent = 100 * results[i].masterPoints/results[i].maxPossible
+            results[i].percent =  round( (10 * results[i].masterPoints/results[i].maxPossible) * 100) / 10
         }        
     }
     
@@ -134,7 +134,8 @@ func printResults(results: Results){
 
 }
 
-func outPutCSV(results:Results){
+func outPutCSV(results:Results) -> URL {
+//    var data:Data = Data()
     //Bundle.main.url(forResource: fileName, withExtension: "json")
     //https://medium.com/@CoreyWDavis/reading-writing-and-deleting-files-in-swift-197e886416b0
     let outputPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -152,9 +153,10 @@ func outPutCSV(results:Results){
         outputString = outputString.appending(String(results.results[row].percent))
         outputString = outputString.appending("\n")
     }
+    
     guard let data = outputString.data(using: .utf8) else {
         print("unable to convert string data")
-        return
+        return fileURL
     }
     // Save the data
     do {
@@ -166,5 +168,5 @@ func outPutCSV(results:Results){
     }
 
     print(outputString)
-    
+    return fileURL
 }
