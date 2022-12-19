@@ -31,7 +31,7 @@ struct ResultsView: View {
                     Text(event.stringDate())
                     Spacer()
                     Button("Save", action: {
-                        outPutCSV(results: results)
+                        results.outPutCSV(results: results,event:event)
                     }).padding()
                     Spacer()
                 }
@@ -68,7 +68,7 @@ struct ResultsView: View {
             
         }
         .onAppear(){
-            results.fillResults(match: match, entryNames: entryNames)
+            results.fillResultsTable(match: match, entryNames: entryNames)
         }
         .frame(width:800)
         .padding()
