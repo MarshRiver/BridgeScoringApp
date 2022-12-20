@@ -10,56 +10,56 @@ import SwiftUI
 import UIKit
 import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+//class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view, typically from a nib.
+//    }
     
     //@IBAction 
-    func sendEmail(_ sender: Any) {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposer = MFMailComposeViewController()
-            mailComposer.setToRecipients(["percivalcj@gmail.com"])
-            mailComposer.setSubject("Update about ios tutorials")
-            mailComposer.setMessageBody("What is the update about ios tutorials on youtube", isHTML: false)
-            mailComposer.mailComposeDelegate = self
-           self.present(mailComposer, animated: true
-                    , completion: nil)
-        } else {
-            print("Email is not configured in settings app or we are not able to send an email")
-        }
-    }
+//    func sendEmail(_ sender: Any) {
+//        if MFMailComposeViewController.canSendMail() {
+//            let mailComposer = MFMailComposeViewController()
+//            mailComposer.setToRecipients(["percivalcj@gmail.com"])
+//            mailComposer.setSubject("Update about ios tutorials")
+//            mailComposer.setMessageBody("What is the update about ios tutorials on youtube", isHTML: false)
+//            mailComposer.mailComposeDelegate = self
+//           self.present(mailComposer, animated: true
+//                    , completion: nil)
+//        } else {
+//            print("Email is not configured in settings app or we are not able to send an email")
+//        }
+//    }
     
     //MARK:- MailcomposerDelegate
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        switch result {
-        case .cancelled:
-            print("User cancelled")
-            break
+//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        switch result {
+//        case .cancelled:
+//            print("User cancelled")
+//            break
+//
+//        case .saved:
+//            print("Mail is saved by user")
+//            break
+//
+//        case .sent:
+//            print("Mail is sent successfully")
+//            break
+//
+//        case .failed:
+//            print("Sending mail is failed")
+//            break
+//        default:
+//            break
+//        }
+//
+//        controller.dismiss(animated: true)
+//
+//    }
 
-        case .saved:
-            print("Mail is saved by user")
-            break
-
-        case .sent:
-            print("Mail is sent successfully")
-            break
-
-        case .failed:
-            print("Sending mail is failed")
-            break
-        default:
-            break
-        }
-
-        controller.dismiss(animated: true)
-
-    }
-
-}
+//}
 
 //        if MFMailComposeViewController.canSendMail() {
 
@@ -73,33 +73,33 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 //        emailer.addAttachmentData(<#T##attachment: Data##Data#>, mimeType: "text", mimeType: , fileName: "Results.csv")
 
 
-struct emailResults:UIViewControllerRepresentable{
-    var delegate:MFMailComposeViewControllerDelegate
-    
-    func makeUIViewController(context: Context) -> MFMailComposeViewController {
-        
-        let emailer = MFMailComposeViewController()
-        emailer.setToRecipients(["percivalcj@gmail.com"])
-//        emailer.setCcRecipients()
-        emailer.setSubject("Results")
-        emailer.mailComposeDelegate = delegate
-        
-        return emailer
-    }
+//struct emailResults:UIViewControllerRepresentable{
+//    var delegate:MFMailComposeViewControllerDelegate
+//
+//    func makeUIViewController(context: Context) -> MFMailComposeViewController {
+//
+//        let emailer = MFMailComposeViewController()
+//        emailer.setToRecipients(["percivalcj@gmail.com"])
+////        emailer.setCcRecipients()
+//        emailer.setSubject("Results")
+//        emailer.mailComposeDelegate = delegate
+//
+//        return emailer
+//    }
+//
+//
+//    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
+//    }
+//
+//    func canSendEmail() -> Bool{
+//        return MFMailComposeViewController.canSendMail()
+//    }
+//}
 
-    
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
-    }
-    
-    func canSendEmail() -> Bool{
-        return MFMailComposeViewController.canSendMail()
-    }
-}
-
-
+//https://www.hackingwithswift.com/books/ios-swiftui/using-coordinators-to-manage-swiftui-view-controllers about coordinators
 //https://stackoverflow.com/questions/56784722/swiftui-send-email
 
-struct MailView2: UIViewControllerRepresentable {
+struct emailer: UIViewControllerRepresentable {
     
     var data:Data
     
@@ -111,44 +111,61 @@ struct MailView2: UIViewControllerRepresentable {
         @Binding var presentation: PresentationMode
         @Binding var result: Result<MFMailComposeResult, Error>?
 
-        init(presentation: Binding<PresentationMode>,
-             result: Binding<Result<MFMailComposeResult, Error>?>) {
+        init(presentation: Binding<PresentationMode>,result: Binding<Result<MFMailComposeResult, Error>?>) {
             _presentation = presentation
             _result = result
         }
 
-        func mailComposeController(_ controller: MFMailComposeViewController,
-                                   didFinishWith result: MFMailComposeResult,
-                                   error: Error?) {
-            defer {
-                $presentation.wrappedValue.dismiss()
+        func mailComposeController(_ controller: MFMailComposeViewController,didFinishWith result: MFMailComposeResult,error: Error?) {
+            //            defer {
+            //                $presentation.wrappedValue.dismiss()
+            //            }
+            //            guard error == nil else {
+            //                self.result = .failure(error!)
+            //                return
+            //            }
+            //            self.result = .success(result)
+            switch result {
+            case .cancelled:
+                print("User cancelled")
+                break
+                
+            case .saved:
+                print("Mail is saved by user")
+                break
+                
+            case .sent:
+                print("Mail is sent successfully")
+                break
+                
+            case .failed:
+                print("Sending mail is failed")
+                break
+            default:
+                break
             }
-            guard error == nil else {
-                self.result = .failure(error!)
-                return
-            }
-            self.result = .success(result)
+            controller.dismiss(animated: true)
         }
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(presentation: presentation,
-                           result: $result)
+        return Coordinator(presentation: presentation,result: $result)
     }
 
     func updateUIViewController(_ uiViewController: MFMailComposeViewController,
-                                context: UIViewControllerRepresentableContext<MailView2>) {
+                                context: UIViewControllerRepresentableContext<emailer>) {
 
     }
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<MailView2>) -> MFMailComposeViewController {
+    //https://www.tutorialspoint.com/how-to-send-an-attachment-in-email-using-swift-ios#
+    //TODO: add error handler and dismiss functions
+    func makeUIViewController(context: UIViewControllerRepresentableContext<emailer>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
-        vc.mailComposeDelegate = context.coordinator
         vc.setSubject("Match Results")
         vc.setToRecipients(["percivalcj@gmail.com"])
         vc.setCcRecipients(["percivalcj@gmail.com"])
-        
         vc.addAttachmentData(data, mimeType: "text", fileName: "Results.csv")
+        vc.mailComposeDelegate = context.coordinator
         return vc
     }
 

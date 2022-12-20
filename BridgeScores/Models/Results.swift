@@ -49,6 +49,8 @@ class Results: ObservableObject {
         //        }
     }
     
+    
+    //TODO: need to figure how to stop at last board scored
     func toteMasterPoints(match: Match){
         //Inititalize resultRows
         for i in 0..<results.count {
@@ -62,6 +64,7 @@ class Results: ObservableObject {
         match.Boards.forEach { board in
             //for each contract
             board.contracts.forEach { contract in
+                //TODO: add test for score
                 //test for EW Pair and NS Pair not null
                 if contract.nsPair != "" && contract.ewPair != ""   {
                     //Caluculate ns numbers

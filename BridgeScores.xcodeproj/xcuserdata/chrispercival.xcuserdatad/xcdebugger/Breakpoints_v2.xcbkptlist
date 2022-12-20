@@ -30,8 +30,8 @@
             filePath = "BridgeScores/Models/Email.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "makeUIViewController(context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,15 +40,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "469ACAFA-0024-4FA0-9A1A-B5A4378F5C6E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BridgeScores/Models/Results.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "outPutCSV(results:)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "outPutCSV(results:event:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,10 +62,122 @@
             filePath = "BridgeScores/Models/Results.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "outPutCSV(results:event:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "187DC89C-92E2-4243-8B0C-98A12F7BDBAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeScores/Models/Email.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "mailComposeController(_:didFinishWith:error:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "187DC89C-92E2-4243-8B0C-98A12F7BDBAE - bb58ae4e598f7618"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeScores.MailView2.Coordinator.mailComposeController(_: __C.MFMailComposeViewController, didFinishWith: __C.MFMailComposeResult, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "BridgeScores"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrispercival/Desktop/BridgeApp/BridgeScores/BridgeScores/Models/Email.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "187DC89C-92E2-4243-8B0C-98A12F7BDBAE - 9493c14f7d768861"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "$defer() -&gt; ()"
+                  moduleName = "BridgeScores"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrispercival/Desktop/BridgeApp/BridgeScores/BridgeScores/Models/Email.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AE8D40A-C149-4902-AA5A-B6398FC59423"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeScores/Views/MailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32D310BA-955D-465D-9EF6-5C029AF657C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BridgeScores/Views/MailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "32D310BA-955D-465D-9EF6-5C029AF657C8 - b12be44d7bf102f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BridgeScores.MailView.body.getter : some"
+                  moduleName = "BridgeScores"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrispercival/Desktop/BridgeApp/BridgeScores/BridgeScores/Views/MailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1264">
+               </Location>
+               <Location
+                  uuid = "32D310BA-955D-465D-9EF6-5C029AF657C8 - cc1270bdb6ee6d9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Text, SwiftUI.TextField&lt;SwiftUI.Text&gt;)&gt; in BridgeScores.MailView.body.getter : some"
+                  moduleName = "BridgeScores"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrispercival/Desktop/BridgeApp/BridgeScores/BridgeScores/Views/MailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "720">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
