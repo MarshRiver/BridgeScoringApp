@@ -66,7 +66,9 @@ class Results: ObservableObject {
             board.contracts.forEach { contract in
                 //TODO: add test for score
                 //test for EW Pair and NS Pair not null
-                if contract.nsPair != "" && contract.ewPair != ""   {
+//                if contract.nsPair != "" && contract.ewPair != ""   {
+                if contract.nsScore != "" && contract.ewScore != ""
+                        && contract.nsPair != "" && contract.ewPair != "" {
                     //Caluculate ns numbers
                     let nsPair = (Int(contract.nsPair) ?? 0)
                     results[nsPair - 1].masterPoints += contract.nsMP
